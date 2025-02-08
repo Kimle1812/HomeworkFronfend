@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9</title>
+</head>
+<body>
+    <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label for="date_of_birth">Ngày sinh:</label>
+        <input type="date" id="date_of_birth" required>
+        <br>
+        <label for="gender">Giới tính:</label>
+            <input type="radio" name="gender"> Nam
+            <input type="radio" name="gender"> Nữ
+        <br>
+        <label for="phone_number">Số điện thoại:</label>
+        <input type="tel" id="phone_number" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="address">Địa chỉ:</label>
+        <textarea name="address" id="address" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="role">Vai trò:</label>
+        <select name="role" id="role">
+            <option value="student">Thành viên</option>
+            <option value="teacher">Thư kí</option>
+            <option value="staff">Hội trưởng</option>
+        </select>
+        <br>
+        <label for="hobby">Sở thích:</label>
+            <input type="text" name="hobby" required>
+        <br>
+        <label for="skill">Kỹ năng:</label>
+            <input type="text" name="skill" required>
+        <br>
+        <label >Thời gian rảnh:</label>
+            <input type="checkbox" > Sáng
+            <input type="checkbox" > Chiều
+            <input type="checkbox" > Tối
+        <br>
+        <label for="reason_to_join">Lý do tham gia:</label>
+        <textarea name="reason_to_join" id="reason_to_join" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="favourite_color">Màu yêu thích:</label>
+        <input type="color" name="favourite_color" placeholder="black" required>
+        <br>
+        <label>Đăng kí nhận bản tin:</label>
+            <input type="checkbox"> Có
+        <br>
+        <label for="recieve_email">Nhận thông báo qua email:</label>
+            <input type="radio" name="recieve_email"> Email
+            <input type="radio" name="recieve_email"> SMS
+        <br>
+        <button>Đăng ký thành viên</button>
+    </form>
+</body>
+</html>
