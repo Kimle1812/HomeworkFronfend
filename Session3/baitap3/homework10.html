@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 10</title>
+</head>
+<body>
+    <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label for="date_of_birth">Ngày sinh:</label>
+        <input type="date" id="date_of_birth" required>
+        <br>
+        <label for="gender">Giới tính:</label>
+        <input type="radio" name="gender"> Nam
+        <input type="radio" name="gender"> Nữ
+        <br>
+        <label for="phone_number">Số điện thoại:</label>
+        <input type="tel" id="phone_number" required>
+        <br>
+        <label for="company">Tên công ty:</label>
+        <input type="text" id="company" required>
+        <br>
+        <label for="role">Vai trò trong công ty:</label>
+        <select name="role" id="role">
+            <option value="ceo">Giám đốc điều hành (CEO)</option>
+            <option value="staff">Nhân viên</option>
+            <option value="manager">Quản lý</option>
+            <option value="director">Giám đốc</option>
+        </select>
+        <br>
+        <label for="company_scale">Quy mô công ty:</label>
+        <select name="company_scale" id="company_scale">
+            <option value="small">Doanh nghiệp nhỏ</option>
+            <option value="medium">Doanh nghiệp vừa</option>
+            <option value="large">Doanh nghiệp lớn</option>
+        </select>
+        <br>
+        <label for="company_scope">Lĩnh vực hoạt động:</label>
+        <input type="text" id="company_scope" required>
+        <br>
+        <label for="reason_to_join">Lý do tham gia câu lạc bộ:</label>
+        <textarea name="reason_to_join" id="reason_to_join" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="leadership_experience">Kinh nghiệm lãnh đạo:</label>
+        <textarea name="leadership_experience" id="leadership_experience" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="expectation">Mục tiêu khi tham gia câu lạc bộ:</label>
+        <textarea name="expectation" id="expectation" cols="20" rows="3" required></textarea>
+        <br>
+        <label>Chương trình sự kiện mong muốn tham gia:</label>
+        <input type="checkbox" > Networking
+        <input type="checkbox" > Workshops
+        <input type="checkbox" > Hội thảo
+        <br>
+        <label>Đăng kí nhận bản tin:</label>
+        <input type="checkbox"> Có
+        <br>
+        <button>Đăng ký hội viên</button>
+    </form>
+</body>
+</html>
