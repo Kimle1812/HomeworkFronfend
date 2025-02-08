@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8</title>
+</head>
+<body>
+    <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label for="date_of_birth">Ngày sinh:</label>
+        <input type="date" id="date_of_birth" required>
+        <br>
+        <label for="gender">Giới tính:</label>
+        <input type="radio" name="gender"> Nam
+        <input type="radio" name="gender"> Nữ
+        <br>
+        <label for="citizen_id">Số căn cước công dân:</label>
+        <input type="number" id="citizen_id" required>
+        <br>
+        <label for="issue_date">Ngày cấp:</label>
+        <input type="date" id="issue_date" required>
+        <br>
+        <label for="issue_place">Nơi cấp:</label>
+        <input type="text" id="issue_place" required>
+        <br>
+        <label for="phone_number">Số điện thoại:</label>\
+        <input type="tel" id="phone_number" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="address">Địa chỉ thường trú:</label>
+        <textarea name="address" id="address" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="address">Địa chỉ tạm trú:</label>
+        <textarea name="address" id="address" cols="20" rows="3" required></textarea>
+        <br>
+        <label for="type_of_cityzen">Loại căn cước công dân:</label>
+        <input type="radio" name="type_of_cityzen"> Căn cước công dân mới
+        <input type="radio" name="type_of_cityzen"> Căn cước công dân cũ
+        <br>
+        <label for="people">Dân tộc:</label>
+        <input type="text" id="people" required>
+        <br>
+        <label for="religion">Tôn giáo:</label>
+        <input type="text" id="religion" required>
+        <br>
+        <label for="nationality">Quốc tịch:</label>
+        <input type="text" id="national" placeholder="Việt Nam" required>
+        <br>
+        <label for="name">Họ và tên cha/mẹ:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label for="citizen_id">Số CMND/CCCD của cha/mẹ:</label>
+        <input type="number" id="citizen_id" required>
+        <br>
+        <label for="city">Tỉnh/Thành phố:</label>
+        <select name="city" id="city" required>
+            <option value="city0">Chọn tỉnh/thành phố</option>
+            <option value="city1">Hà Nội</option>
+            <option value="city2">Hồ Chí Minh</option>
+            <option value="city3">Đà Nẵng</option>
+            <option value="city4">Hải Phòng</option>
+            <option value="city5">Cần Thơ</option>
+        </select>
+        <br>
+        <button type="submit">Gửi thông tin</button>
+    </form>
+</body>
+</html>
