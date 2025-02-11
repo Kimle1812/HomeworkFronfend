@@ -1,0 +1,12 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+ }
+.content{
+    background-color: black; 
+    color:aliceblue
+}
+.paragraph1{
+    color:rgb(130, 214, 46);
+}

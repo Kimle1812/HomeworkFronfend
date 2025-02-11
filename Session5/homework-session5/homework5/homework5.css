@@ -1,0 +1,9 @@
+.color-heading{
+    color:rgb(19, 217, 217);
+}
+.example{
+    padding-top: 20px;
+    padding-left: 10px;
+    border-left: 5px solid rgb(201, 201, 62) ;
+    background-color: rgb(243, 236, 163);
+}

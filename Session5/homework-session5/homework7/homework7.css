@@ -1,0 +1,31 @@
+.table1{
+    width: 100%;
+    border-color:white;
+}
+.content{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}
+.title1{
+    background-color: rgb(0, 157, 255);
+    color:aliceblue;
+}
+.title2{
+     background-color: rgb(169, 201, 228);
+}
+.color-green{
+    background-color: green;
+    color:white;
+    border: 0;
+}
+.color-coral{
+    background-color:coral;
+    color:black;
+    border: 0;
+}
+.color-red{
+    background-color: red;
+    color:white;
+    border: 0;
+}

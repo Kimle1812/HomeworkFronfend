@@ -1,0 +1,11 @@
+.first-last_name{
+    display: flex;
+    line-height: 30px;
+    gap: 20px;
+}
+.username span{
+    border:solid 1px black;
+    border-radius: 5px;
+    padding:5px;
+    margin-right: -5px;
+}

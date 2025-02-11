@@ -1,0 +1,15 @@
+.table1{
+    width: 100%;
+    border-color:aliceblue;
+}
+.content{
+    background-color: aliceblue;
+    text-align: center;
+}
+.title1{
+    background-color: rgb(0, 157, 255);
+    color:aliceblue;
+}
+.title2{
+     background-color: rgb(169, 201, 228);
+}

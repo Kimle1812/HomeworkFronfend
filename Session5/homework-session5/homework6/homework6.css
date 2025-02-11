@@ -1,0 +1,30 @@
+.paragraph1{
+    border-style:solid;
+    border-color:green;
+    text-align:center;
+    padding:10px;
+}
+.color-red{
+    background-color: antiquewhite;
+    color:red;
+}
+.color-blue{
+    color:blue;
+}
+.color-gray{
+    background-color:gray;
+    padding:10px;
+}
+.center{
+    border-left: 10px solid green;
+    background-color:wheat;
+    padding-left: 10px;
+}
+.color-tomato{
+    color:tomato;
+}
+.button{
+    background-color: green;
+    color:white;
+    border-radius:5px;
+}
