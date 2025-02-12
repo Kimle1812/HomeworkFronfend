@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.heading{
+    background-color: rgb(39, 186, 39);
+    height: 70px;
+    text-align: center;
+    line-height: 30px;
+    padding-top: 10px;
+}
+
+h2{
+    color: white;
+}
+
+.categories{
+    background-color: rgb(227, 225, 225);
+    border: 2px solid rgb(200, 198, 198);
+    height: 400px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+.li{
+    margin-left: 30px;
+    padding-top: 5px;
+}
+
+.post{
+    margin-left: 3%;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    width: 700px;
+    border-bottom: 3px solid rgb(205, 204, 204);
+    height: 150px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 10px;
+}
