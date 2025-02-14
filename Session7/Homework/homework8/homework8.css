@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card{
+    height: 270px;
+    width: 360px;
+    background-color: rgb(248, 221, 196);
+    padding: 30px;
+    margin: 10px;
+    border: 1px solid rgb(87, 85, 85);
+    border-radius: 5px;
+}
+
+.title{
+    padding-bottom: 5px;
+}
+
+.condition{
+    height: 16px;
+    width: 50px;
+    background-color: #ffe5bd;
+    border: 2px solid orange;
+    color: rgb(179, 21, 21);
+    font-size: 8px;
+    border-radius: 5px;
+}
+
+.client{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.budget{
+    padding-bottom: 15px;
+}
+
+.progress-bar{
+    background-color: #f6f9a9;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress{
+    background-color: #ff9800;
+    width: 76%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.progress-text{
+    padding-bottom: 3px;
+    position: relative;
+    bottom: 5px;
+}
+
+.percentage{
+    position: relative;
+    left: 73%;
+}
+
+.text{
+    position: relative;
+    top: 14px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.avt{
+    padding-top: 30px;
+}
+
+img{
+    border-radius: 100%;
+}
+
+.img{
+    position: relative;
+    right: 12px;
+}
+
+.task{
+    position: relative;
+    left: 275px;
+    bottom: 24px;
+}
+
+.blurred-text{
+    opacity: 0.7;
+}
