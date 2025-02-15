@@ -1,0 +1,33 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+.container{
+    padding: 20px;
+    text-align: center;
+    width: 60%;
+}
+p{
+    padding: 10px 30px;
+    opacity: 0.6;
+}
+h1{
+    padding: 20px 40px;
+}
+img{
+    padding: 20px ;
+}
+button{
+    margin: 30px;
+    padding: 10px;
+    border: 2px solid;
+}
+.border1{
+    border: 1px solid rgb(109, 107, 107);
+}
+.border2{
+    border-right: 2px solid black;
+    border-bottom: 1px solid rgb(109, 107, 107);
+    border-top: 1px solid rgb(109, 107, 107);
+}
