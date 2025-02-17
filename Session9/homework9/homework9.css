@@ -1,0 +1,38 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+.title{
+    position: relative;
+    margin: 15px;
+}
+.text-image{
+    position:absolute;
+    bottom:50px;
+    color:antiquewhite;
+    margin-left: 20px;
+}
+.text-image p{
+    margin-top: 20px;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    margin-left: 15px;
+}
+.background-image{
+    position: relative;
+}
+.content-image{
+    position:absolute;
+    bottom: 10px;
+}
+.text{
+    text-align: center;
+    padding-top: 90px;
+    background-color: brown;
+    width: 480px;
+    height: 200px;
+}

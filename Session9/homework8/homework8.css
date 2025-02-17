@@ -1,0 +1,62 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+.container{
+    text-align: center;
+    line-height: 40px;
+}
+.title{
+    background-color: black;
+    color:rgb(241, 234, 224);
+    padding: 20px;
+
+}
+.title a{
+    text-decoration: none;
+    padding: 0px 5px;
+    color:rgb(241, 234, 224);
+}
+
+.content-title{
+    background-color: rgb(203, 201, 201);
+    padding: 30px;
+}
+.content-title button{
+    padding: 10px;
+    background-color: black;
+    color:rgb(241, 234, 224);
+    border-radius: 5px;
+    border: 0;
+}
+.content-project{
+    padding: 30px;
+}
+.project1{
+    display: flex;
+    justify-content: center;
+}
+.project1 div{
+    padding:  30px 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: rgb(173, 172, 172);
+}
+.project2{
+    display: flex;
+    justify-content: center;
+}
+.project2 div{
+    padding:  10px 43px;
+}
+.content-note{
+    background-color: rgb(203, 201, 201);
+    padding: 40px;
+}
+.note{
+    background-color: black;
+    color:rgb(137, 136, 133);
+    padding: 10px;
+
+}
