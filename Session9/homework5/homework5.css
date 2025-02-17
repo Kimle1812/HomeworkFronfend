@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content:space-between;
+}
+.div{
+    border: 0;
+    background-color: rgb(130, 130, 238);
+    padding: 15px 60px;
+    color:white;
+    margin: 7px 14px;
+    border-radius: 5px;
+}

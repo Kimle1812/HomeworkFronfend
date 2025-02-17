@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.table{
+    display: flex;
+    flex-direction: row;
+    width: 1600px;
+}
+
+.area_big{
+    display: flex;
+    flex-direction: column;
+}
+
+.big{
+    width: 400px;
+    height: 110px;
+    background-color: rgb(35, 22, 84);
+    margin: 5px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.area_small{
+    display: flex;
+    flex-direction: column;
+}
+
+.row_small{
+    display: flex;
+    flex-direction: row;
+}
+
+.small{
+    width: 160px;
+    height: 50px;
+    background-color: rgb(35, 22, 84);
+    margin: 5px;
+    line-height: 50px;
+    text-align: center;
+}

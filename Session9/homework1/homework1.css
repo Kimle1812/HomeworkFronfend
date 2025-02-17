@@ -1,0 +1,15 @@
+.container{
+    border: 3px solid black;
+    background-color: rgb(240, 180, 240);
+    height: 600px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fixed-element{
+    
+    background-color: rgb(130, 130, 238);
+    padding: 60px 40px;
+    color:white;
+}
