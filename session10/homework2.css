@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: inline-block;
+    background-color: rgb(215, 212, 212);
+}
+.content{
+    display: flex;
+    gap:10px;
+    margin: 10px;
+}
+h3{
+    padding: 0px 10px;
+}
+
+.content div img{
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    margin: 8px;
+}
+.content  p{
+    background-color: rgb(167, 165, 165);
+    background-image: linear-gradient(black, white);
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    font-family: "Titan One", serif;
+    font-weight: 400;
+    font-style: normal;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+

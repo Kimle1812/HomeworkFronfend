@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color:rgb(243, 212, 173);
+    height: 500px;
+    width: 75%;
+}
+.title{
+    display: flex;
+    justify-content: end;
+}
+.title h3{
+    padding-right: 30px;
+    margin: 20px 10px;
+}
+.content{
+    display: flex;
+    margin-top: 100px;
+}
+.content div{
+    width: 600px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.content div h1{
+    color: rgb(80, 80, 108);
+    font-size: 50px;
+}
+.content div p{
+    margin-top: 30px;
+    color: rgb(80, 80, 108);
+    font-size: 18px;
+}
+.content div button{
+    margin-top: 30px;
+    background-color: tomato;
+    border: 0;
+    color:bisque;
+    padding: 10px;
+}
+.content img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: -5px 5px white;
+}

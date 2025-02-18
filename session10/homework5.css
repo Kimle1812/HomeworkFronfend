@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: rgb(167, 165, 165);
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5px;
+}
+.container .title{
+    padding-top: 20px;
+    padding-left: 100px;
+}
+.content {
+    display: flex;
+    margin: 20px 100px;
+    border-bottom: 1px solid rgb(194, 190, 190);
+}
+.content img{
+    height: 180px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.title1{
+    margin-left: 10px;
+}
+
+.content .title1 div button{
+    background-color: rgb(23, 23, 155);
+    color: rgb(174, 188, 201);
+    border-radius: 15px;
+    padding: 3px;
+    margin-top: 20px;
+}
+.content .title1 div span{
+    margin-left: 10px;
+}
+.content .title1 p{
+    margin-top: 30px;
+}
+.note{
+    margin: 70px;
+    text-align: center;
+}
+.note i{
+    margin: 20px 20px;
+    font-size: 30px;
+}
