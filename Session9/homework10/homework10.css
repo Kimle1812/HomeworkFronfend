@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 160px;
+    background-color: rgb(52, 108, 239);
+    color: white;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.header .row1{
+    position: relative;
+    height: 40px;
+    left: 1300px;
+    padding-top: 10px;
+}
+
+.header .row1 img{
+    border-radius: 50%;
+    position: absolute;
+    line-height: 40px;
+    left: 160px;
+}
+
+.header .row1 i{
+    position: absolute;
+    line-height: 40px;
+    font-size: 24px;
+    left: 120px;
+}
+
+.header .row1 a{
+    position: absolute;
+    line-height: 40px;
+    opacity: 0.8;
+}
+
+.header .row2{
+    position: relative;
+    height: 40px;
+    display: flex;
+    padding-top: 20px;
+    background-color: rgb(52, 108, 239);
+}
+
+.header .row2 h2{
+    padding-left: 20px;
+    line-height: 20px;
+}
+
+.header .row2 button{
+    position: absolute;
+    left: 1370px;
+    bottom: 14px;
+}
+
+.header .row2 .btn-setup{
+    border: 2px solid white;
+    background-color: rgb(52, 108, 239);
+    color: white;
+    height: 34px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.header .row2 i{
+    position: absolute;
+    left: 1470px;
+    font-size: 20px;
+}
+
+.header .row3{
+    position: relative;
+    height: 40px;
+    display: flex;
+    padding-top: 20px;
+    background-color: rgb(52, 108, 239);
+}
+
+.header .row3 .user{
+    border-bottom: 4px solid white;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.header .row3 a{
+    opacity: 0.6;
+}
+
+.body{
+    padding-top: 20px;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(235, 232, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .srearch-area{
+    height: 200px;
+    width: 1300px;
+    background-color: rgb(235, 232, 232);
+}
+
+.body .srearch-area .srearch-line{
+    width: 1280px;
+    height: 50px;
+    background-color: rgb(250, 248, 248);
+    border: 1px solid rgb(204, 204, 204);
+    line-height: 50px;
+    padding-left: 19px;
+}
+
+.body .srearch-area .srearch-line input{
+    width: 1070px;
+    height: 46px;
+    margin-left: 20px;
+    background-color: rgb(250, 248, 248);
+    border: none;
+}
+
+.body .srearch-area .srearch-line button{
+    border: none;
+    background-color: rgb(52, 108, 239);
+    color: white;
+    width: 80px;
+    height: 34px;
+    border-radius: 5px;
+}
+
+.body .srearch-area .srearch-line i{
+    margin-left: 10px;
+}
+
+.body .srearch-area .user-information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: white;
+    border: 1px solid rgb(204, 204, 204);
+    opacity: 0.8;
+}
