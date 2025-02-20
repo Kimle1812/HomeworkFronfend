@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 40%;
+    border: 1px solid black;
+    padding: 20px;
+    line-height: 10px;
+    border-radius: 5px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.header button{
+    margin-top: 10px;
+}
+.content{
+    line-height: 40px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 8</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="m-5 p-3 mb-2 bg-light text-dark w-50">
+        <h2>Payment</h2>
+        <div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                Credit card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                Debit card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                PayPal
+                </label>
+            </div>
+        </div>
+        <div class="pt-3">
+            <form class="row g-3">
+                <div class="col-6">
+                    <label for="inputEmail4" class="form-label">Name on card</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-6">
+                    <label for="inputPassword4" class="form-label">Credit card number</label>
+                    <input type="number" class="form-control" id="inputPassword4">
+                </div>
+            </form>
+        </div>
+        <p>Full name as displayed on card</p>
+        <div>
+            <form class="row g-3">
+                <div class="col-md-3">
+                    <label for="inputEmail4" class="form-label">Expiration</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputPassword4" class="form-label">CVV</label>
+                    <input type="number" class="form-control" id="inputPassword4">
+                </div>
+            </form>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary w-100">Continue to checkout</button>
+    </div>
+</body>
+</html>
