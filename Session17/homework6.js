@@ -1,0 +1,12 @@
+let number_a=Number("5");
+console.log("Số đã chuyển đổi là:", number_a);
+let number_b=Number("-1");
+console.log("Số đã chuyển đổi là:", number_b);
+let number_c=Number("Hello");
+console.log("Số đã chuyển đổi là:", number_c);
+let string1=55;
+console.log("Chuỗi đã chuyển đổi là:", string1.toString());
+let string2=-10;
+console.log("Chuỗi đã chuyển đổi là:", string2.toString());
+let string3=0;
+console.log("Chuỗi đã chuyển đổi là:", string3.toString());
