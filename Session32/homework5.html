@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: rgb(215, 212, 212);
+            width: 40%;
+            height: auto;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .container h2 {
+            padding-top: 20px;
+        }
+        .main {
+            background-color: white;
+            margin: 10px 100px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .main_top {
+            margin-bottom: 10px;
+        }
+        .main .main_top input {
+            border: 1px solid rgb(201, 197, 197);
+            border-radius: 5px;
+            padding: 7px;
+        }
+        .main .main_top button {
+            padding: 7px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(20, 193, 10);
+            color: white;
+        }
+        .main .main_bottom .content {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 40px;
+        }
+        .main .main_bottom hr {
+            opacity: 0.3;
+            margin: 0px 30px;
+        }
+        .main .main_bottom .content .delete_button {
+            width: 25px;
+            height: 22px;
+            background-color: tomato;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List K24_PTIT</h2>
+        <div class="main">
+            <div class="main_top">
+                <input id="inputText" type="text" placeholder="Nhập nhiệm vụ...">
+                <button onclick="addListJob()">Thêm</button>
+            </div>
+            <div id="list_item" class="main_bottom"></div>
+        </div>
+    </div>
+    <script>
+        let listJob = [];
+        
+        function displayListJob() {
+            let listItemElement = document.getElementById("list_item");
+            listItemElement.innerHTML = "";
+            listJob.forEach((item, index) => {
+                listItemElement.innerHTML += `
+                    <div class="content">
+                        <div>${item}</div>
+                        <button class="delete_button" onclick="deleteJob(${index})">X</button>
+                    </div>
+                    <hr>
+                `;
+            });
+        }
+        
+        function addListJob() {
+            let inputText = document.getElementById("inputText");
+            if (inputText.value.trim()) {
+                listJob.push(inputText.value.trim());
+                inputText.value = "";
+            }
+            displayListJob();
+        }
+        
+        function deleteJob(index) {
+            let confirmPayment = confirm("Bạn có muốn xóa hay không?");
+            if (confirmPayment) {
+                listJob.splice(index, 1);
+            }
+            displayListJob();
+        }
+        displayListJob();
+    </script>
+</body>
+</html>
