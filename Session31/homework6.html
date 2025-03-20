@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 250px;
+            height: 150px;
+            border: 1px solid black;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="button" id="loginButton">login</button>
+    </form>
+    <script>
+        const fixedUsername = "huanrose@gmail.com";
+        const fixedPassword = "123456";
+        document.getElementById("loginButton").addEventListener("click",()=>{
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username === fixedUsername && password === fixedPassword) {
+                console.log("Đăng nhập thành công");
+            } else {
+                console.log("Đăng nhập thất bại");
+            }
+        });
+    </script>
+</body>
+</html>

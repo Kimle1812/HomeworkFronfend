@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellpadding="10">
+        <thead>
+            <th>STT</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>ADDRESS</th>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>18</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mike</td>
+                <td>22</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Linda</td>
+                <td>19</td>
+                <td>California</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Peter</td>
+                <td>25</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Tony</td>
+                <td>17</td>
+                <td>New York</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        const employees = [
+            {
+                id: 1,
+                name: 'Example 1',
+                age: 18,
+                address: 'District',
+            },
+            {
+                id: 2,
+                name: 'Example 2',
+                age: 18,
+                address: 'District',
+            }
+        ];
+        function render() {
+            let string = "";
+            for (let i = 0; i < employees.length; i++) {
+                string += 
+                `<tr>
+                    <td>${employees[i].id}</td>
+                    <td>${employees[i].name}</td>
+                    <td>${employees[i].age}</td>
+                    <td>${employees[i].address}</td>
+                </tr>`
+            }
+            document.getElementsByTagName("tbody")[0].innerHTML=string;
+        }
+        render();
+    </script>
+</body>
+</html>

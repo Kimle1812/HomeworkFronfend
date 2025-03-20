@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+            padding: 10px;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+        .container button{
+            background-color: darkgray;
+            border-radius: 5px;
+        }
+        .main{
+            background-color: azure;
+            border-radius: 10px;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            width: 60%;
+            height: 100px;
+            padding: 20px;
+            display: none;
+        }
+        .main button{
+            margin-bottom: 70px;
+            background-color: white;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Modal Example</h1>
+        <button onclick="show()">Open Modal</button>
+        <div class="content">
+            <div class="main">
+                <p>Some text in the Modal</p>
+                <button onclick="hide()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </div>
+    <script>
+       function show() {
+        document.getElementsByClassName("main")[0].style.display="flex";
+        document.getElementsByClassName("container")[0].style.backgroundColor="gray";
+       }
+       function hide() {
+        document.getElementsByClassName("main")[0].style.display="none";
+        document.getElementsByClassName("container")[0].style.backgroundColor="white";
+       }
+    </script>
+</body>
+</html>

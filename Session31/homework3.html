@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            display: inline-block;
+            border-radius: 5px;            
+        }
+        .content{
+            display: flex;
+            margin: 5px;
+        }
+        .color_green{
+            background-color: darkgreen;
+            border-radius: 10px;
+            border: 2px solid black;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+        }
+        .color_red{
+            background-color: red;
+            border-radius: 10px;
+            border: 2px solid black;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+        }
+        .color_violet{
+            background-color: violet;
+            border-radius: 10px;
+            border: 2px solid black;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>change background-color</p>
+        <p>Mouse click</p>
+        <div class="content">
+            <div class="color_green" onclick="background_green()">xanh</div>
+            <div class="color_red" onclick="background_red()">do</div>
+            <div class="color_violet" onclick="background_violet()">tim</div>
+        </div>
+    </div>
+    <script>
+        function background_green() {
+            document.getElementsByClassName("container")[0].style.backgroundColor = "green";
+        }
+        function background_red() {
+            document.getElementsByClassName("container")[0].style.backgroundColor = "red";
+        }
+        function background_violet() {
+            document.getElementsByClassName("container")[0].style.backgroundColor = "violet";
+        }
+    </script>
+</body>
+</html>
