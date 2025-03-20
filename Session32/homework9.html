@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 0;
+            margin: 0;
+            width: 500px;
+            text-align: center;
+        }
+        .progress-container {
+            width: 500px;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 30px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 30px;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.3s ease; 
+        }
+        .ascend-btn, .descend-btn {
+            width: 150px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(85, 85, 239);
+            color: white;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Progress Bar with Background Effect</h2>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <button class="ascend-btn">Tăng tiến trình</button>
+        <button class="descend-btn">Giảm tiến trình</button>
+    </div>
+    <script>
+        let width = 0;
+        document.getElementsByClassName("ascend-btn")[0].addEventListener("click", () => {
+            width += 10; 
+            if (width > 100) {
+                width = 100; 
+            }
+            if (width > 0 && width <= 40) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "#cd2020";
+            } else if (width > 40 && width <= 70) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "rgb(232, 232, 33)";
+            } else if (width > 70) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "#4caf50";
+            }
+            document.getElementsByClassName("progress-bar")[0].style.width = width + '%';
+        });
+        document.getElementsByClassName("descend-btn")[0].addEventListener("click", () => {
+            width -= 10; 
+            if (width < 0) {
+                width = 0; 
+            }
+            if (width > 0 && width <= 40) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "#cd2020";
+            } else if (width > 40 && width <= 70) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "rgb(232, 232, 33)";
+            } else if (width > 70) {
+                document.getElementsByClassName("progress-bar")[0].style.backgroundColor = "#4caf50";
+            }
+            document.getElementsByClassName("progress-bar")[0].style.width = width + '%';
+        });
+    </script>
+</body>
+</html>

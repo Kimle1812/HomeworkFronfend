@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 200px;
+            width: 600px;
+            background-color: rgb(207, 207, 207);
+            text-align: center;
+            line-height: 30px;
+            padding-top: 50px;
+        }
+        .ascend-btn {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(36, 219, 36);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 2px;
+        }
+        .descend-btn {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 2px;
+        }
+        .text {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text">Chữ sẽ thay đổi khi bấm nút</p>
+        <div class="btn-block">
+            <button class="ascend-btn">+</button>
+            <button class="descend-btn">-</button>
+        </div>
+    </div>
+    <script>
+        let fontSize = 20;
+        document.getElementsByClassName("ascend-btn")[0].addEventListener("click",()=>{
+            fontSize +=2;
+            if (fontSize > 50) {
+                fontSize = 50;
+            }
+            document.getElementsByClassName("text")[0].style.fontSize=fontSize + 'px';
+        });
+        document.getElementsByClassName("descend-btn")[0].addEventListener("click",()=>{
+            fontSize -=2;
+            if (fontSize < 10) {
+                fontSize = 10;
+            }
+            document.getElementsByClassName("text")[0].style.fontSize=fontSize + 'px';
+        })
+    </script>
+</body>
+</html>

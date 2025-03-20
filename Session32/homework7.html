@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .pic1{
+            width: 300px;
+            margin: 20px;
+            height: 300px;
+        }
+        .pic2{
+            width: 300px;
+            margin: 20px;
+            height: 300px;
+        }
+        .pic3{
+            width: 300px;
+            margin: 20px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="pic1" src="https://tmso.baotanglamdong.com.vn/wp-content/uploads/2021/10/CA-SAU.jpg" alt="">
+        <img class="pic2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqxhDPvXaAHz12LkoDOSu-RzsG5kPsFj2yg&s" alt="">
+        <img class="pic3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_jmx4RWvVD1g3dDYrz-9NnA6838Hf9aSxmw&s" alt="">
+    </div>
+    <script>
+        document.querySelectorAll(".container img").forEach(img => {
+        img.addEventListener("click", function () {
+        if (this.className.indexOf("enlarged") !== -1) {
+            this.className = this.className.replace(" enlarged", "");
+            document.body.removeEventListener("click", resetImage);
+        } else {
+            document.querySelectorAll(".enlarged").forEach(enlargedImg => {
+                enlargedImg.className = enlargedImg.className.replace(" enlarged", "");
+            });
+            this.className += " enlarged";
+            document.body.addEventListener("click", resetImage);
+        }
+    });
+
+    function resetImage(event) {
+        if (event.target.className.indexOf("enlarged") === -1) {
+            document.querySelectorAll(".enlarged").forEach(enlargedImg => {
+                enlargedImg.className = enlargedImg.className.replace(" enlarged", "");
+            });
+            document.body.removeEventListener("click", resetImage);
+        }
+    }
+});
+
+let style = document.createElement("style");
+style.innerHTML = `
+    .enlarged {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: auto;
+        z-index: 1000;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+`;
+document.head.appendChild(style);
+    </script>
+</body>
+</html>
