@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dish{
+            height:40px;
+            width: 300px;
+        }
+        .button{
+            height:30px;
+            width: 50px;
+        }
+        .dish-item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <select id="dish" onclick="option()">
+        <option value="">Lựa chọn danh mục</option>
+        <option value="Đồ ăn">Đồ ăn</option>
+        <option value="Nước">Nước</option>
+        <option value="Dụng cụ">Dụng cụ</option>
+    </select>
+    <button class="button">Lọc</button>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        let dishs = [
+            { name: 'Rau sạch', category: 'Đồ ăn' },
+            { name: 'Thịt lợn', category: 'Đồ ăn' },
+            { name: 'Pepsi không calo', category: 'Nước' },
+            { name: 'Cocacola', category: 'Nước' },
+            { name: 'Cờ lê', category: 'Dụng cụ' },
+            { name: 'Tuy vít', category: 'Dụng cụ' },
+        ];
+
+        function displayDish(dish) {
+            let string="";
+            for(let i=0;i< dish.length;i++){
+                string +=`<li><b>Tên đồ ăn: </b>${dish[i].name} - <b>Danh mục: </b>${dish[i].category}</li>`
+            }
+            document.getElementById("list").innerHTML=string;
+        }
+        displayDish(dishs);
+        function option(){
+            let show = document.getElementById("dish").value;
+            let result = dishs.filter(item => item.category == show);
+            if(result.length == 0){
+                displayDish(dishs);
+            }else{
+                displayDish(result);
+            }
+        }
+    </script>
+</body>
+</html>

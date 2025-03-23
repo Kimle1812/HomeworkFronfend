@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documnet</title>
+    <style>
+        .result {
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="textarea" rows="5" cols="30"></textarea><br>
+    <div class="result"></div>
+    <button onclick="countCharacters()">Kiểm tra</button>
+    <script>
+        function countCharacters() {
+            const textarea = document.getElementById('textarea');
+            const text = textarea.value;
+            const characterCount = text.length;
+            const countDiv = document.getElementsByClassName("result")[0].textContent = `${characterCount} ký tự`;
+        }
+    </script>
+</body>
+</html>
