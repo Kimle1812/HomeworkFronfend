@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            height: auto;
+            margin: 0;
+            background-color: rgb(233, 232, 232);
+        }
+        .container{
+            width: 70%;
+            margin: 50px auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        .container h1{
+            text-align: center;
+
+        }
+        .container .form-group{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .container .form-group input{
+            width: 20%;
+            height: 30px;
+            opacity: 0.7;
+        }
+        .container .form-group select{
+            width: 20%;
+            height: 35px;
+            opacity: 0.7;
+        }
+        .container .form-group button{
+            width: 70px;
+            height: 35px;
+            border: none;
+            background-color: rgb(20, 115, 204);
+            border-radius: 5px;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Management</h1>
+        <div class="form-group">
+            <input type="text" id="content" placeholder="Content">
+            <input type="date" id="date">
+            <select id="status">
+                <option value="">Choose status</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <input type="text" id="userName" placeholder="Username">
+            <button onclick="createCourse()">Submit</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Content</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Assigned To</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="body_table">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let courses = JSON.parse(localStorage.getItem("courses")) || [
+                {
+                    id: 1,
+                    content: 'Học JavaScript Buổi 01',
+                    dueDate: '2023-04-17',
+                    status: 'Pending',
+                    assignedTo: 'Anh Bách',
+                },
+                {
+                    id: 2,
+                    content: 'Học JavaScript Buổi 02',
+                    dueDate: '2023-04-17',
+                    status: 'Pending',
+                    assignedTo: 'Lâm Th',
+                },
+                {
+                    id: 3,
+                    content: 'Học CSS Buổi 01',
+                    dueDate: '2023-04-17',
+                    status: 'Pending',
+                    assignedTo: 'Hiếu Ci Ớt Ớt',
+                },
+            ];
+        function readData() {
+            let coursesHtml = "";
+            for (let i = 0; i < courses.length; i++) {
+                coursesHtml += `<tr>
+                                    <td>${courses[i].id}</td>
+                                    <td>${courses[i].content}</td>
+                                    <td>${courses[i].dueDate}</td>
+                                    <td>${courses[i].status}</td>
+                                    <td>${courses[i].assignedTo}</td>
+                                    <td>
+                                        <button onclick="editCourse(${courses[i].id})">Sửa</button>
+                                        <button onclick="deleteCourse(${courses[i].id})">Xóa</button>
+                                    </td>
+                                </tr>`;
+            }
+            document.getElementById("body_table").innerHTML = coursesHtml;
+        }
+
+        function createCourse() {
+            const contentText = document.getElementById("content").value.trim();
+            const dateText = document.getElementById("date").value.trim();
+            const status = document.getElementById("status").value.trim();
+            const userName = document.getElementById("userName").value.trim();
+
+            if (!contentText || !dateText || !status || !userName) {
+                console.log("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            const newCourse = {
+                id: courses.length > 0 ? courses[courses.length - 1].id + 1 : 1,
+                content: contentText,
+                dueDate: dateText,
+                status: status,
+                assignedTo: userName,
+            };
+
+            courses.push(newCourse);
+            localStorage.setItem("courses", JSON.stringify(courses));
+            clearForm();
+            readData();
+        }
+
+        function clearForm() {
+            document.getElementById("content").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("status").value = "";
+            document.getElementById("userName").value = "";
+        }
+
+        function editCourse(id) {
+            const courseIndex = courses.findIndex(course => course.id === id);
+            if (courseIndex !== -1) {
+                const course = courses[courseIndex];
+
+                const updatedContent = prompt("Nhập nội dung mới:", course.content) || course.content;
+                const updatedDate = prompt("Nhập ngày hết hạn mới (yyyy-mm-dd):", course.dueDate) || course.dueDate;
+                const updatedStatus = prompt("Nhập trạng thái mới (Đang chờ xử lý/Hoàn thành):", course.status) || course.status;
+                const updatedUserName = prompt("Nhập tên người dùng mới:", course.assignedTo) || course.assignedTo;
+
+                if (!updatedContent || !updatedDate || !updatedStatus || !updatedUserName) {
+                    console.log("Vui lòng điền đầy đủ thông tin!");
+                    return;
+                }
+
+                courses[courseIndex] = {
+                    ...course,
+                    content: updatedContent,
+                    dueDate: updatedDate,
+                    status: updatedStatus,
+                    assignedTo: updatedUserName,
+                };
+
+                localStorage.setItem("courses", JSON.stringify(courses));
+                readData();
+                console.log("Cập nhật thành công!");
+            } else {
+                console.log("Không tìm thấy khóa học.");
+            }
+        }
+
+        function deleteCourse(id) {
+            const courseIndex = courses.findIndex(course => course.id === id);
+            if (courseIndex !== -1) {
+                const confirmation = confirm("Bạn có chắc chắn muốn xóa khóa học này?");
+                if (confirmation) {
+                    courses.splice(courseIndex, 1);
+                    localStorage.setItem("courses", JSON.stringify(courses));
+                    readData();
+                    console.log("Xóa khóa học thành công!");
+                } else {
+                    console.log("Xóa khóa học đã bị hủy.");
+                }
+            } else {
+                console.log("Không tìm thấy khóa học.");
+            }
+        }
+    </script>
+</body>
+</html>

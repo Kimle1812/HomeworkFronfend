@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <div>
+            <form id="registerForm">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" placeholder="Enter your email address"><br>
+                
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" placeholder="Enter your password"><br>
+                
+                <label for="confirmPassword">Confirm Password:</label><br>
+                <input type="password" id="confirmPassword" placeholder="Enter your Confirm password"><br>
+                
+                <button type="button" id="registerBtn" onclick="register()">Register</button>
+            </form>
+        </div>
+    </div>
+    <p id="message"></p>
+    <script>
+        function register(){
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+            if (!email || !password || !confirmPassword) {
+                console.log("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+            if (password !== confirmPassword) {
+                console.log("Mật khẩu xác nhận không khớp!");
+                return;
+            }
+
+            let users= JSON.parse(localStorage.getItem("user")) || [];
+            let findUser = users.find((item) => item.email == email);
+            if(findUser){
+                console.log("Email đã tồn tại");
+                return;
+            }
+            users.push({email,password});
+            localStorage.setItem("user",JSON.stringify(users));
+        
+        }
+
+    </script>
+</body>
+</html>
