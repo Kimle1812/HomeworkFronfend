@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(226, 224, 221);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+        }
+        .content {
+            display: flex;
+            gap: 20px;
+            padding: 0px 10px;
+        }
+        .content input {
+            padding: 0px 20px;
+            margin-left: 20px;
+        }
+        button {
+            width: 100px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sách nhân viên Rikkei</h2>
+        <div class="content">
+            <div>
+                <label for="">Tên nhân viên</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="">Chức vụ</label>
+                <input type="text" id="position">
+            </div>
+        </div>
+        <button onclick="addEmployee()">Thêm</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Chức vụ</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="employeeList"></tbody>
+        </table>
+    </div>
+    <script>
+        let employees = JSON.parse(localStorage.getItem("employees")) || [
+                { name: "Nguyễn Văn A", position: "Developer" },
+                { name: "Trần Thị B", position: "Designer" },
+                { name: "Phạm Văn C", position: "Project Manager" }
+            ];
+    
+        function renderList() {
+            let tbody = document.getElementById("employeeList");
+            tbody.innerHTML = "";
+
+            employees.forEach((employee, index) => {
+                let row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${employee.name}</td>
+                    <td>${employee.position}</td>
+                    <td><button onclick="deleteEmployee(${index})">Xóa</button></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            localStorage.setItem("employees", JSON.stringify(employees));
+        }
+
+        function addEmployee() {
+            let name = document.getElementById("name").value.trim();
+            let position = document.getElementById("position").value.trim();
+
+            if (name === "" || position === "") {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            employees.push({ name, position });
+            document.getElementById("name").value = "";
+            document.getElementById("position").value = "";
+            renderList();
+        }
+
+        function deleteEmployee(index) {
+            employees.splice(index, 1);
+            renderList();
+        }
+
+        renderList();
+    </script>
+</body>
+</html>
