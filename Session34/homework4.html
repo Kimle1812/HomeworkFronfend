@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: rgb(234, 229, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .container {
-            background-color: rgb(215, 212, 212);
             width: 40%;
             height: auto;
             text-align: center;
@@ -17,7 +22,7 @@
         }
         .main {
             background-color: white;
-            margin: 10px 100px;
+            margin: 10px 50px;
             padding: 20px;
             border-radius: 5px;
         }
@@ -56,7 +61,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>To-Do List K24_PTIT</h2>
+        <h2>To-Do List</h2>
         <div class="main">
             <div class="main_top">
                 <input id="inputText" type="text" placeholder="Nhập nhiệm vụ...">
@@ -66,7 +71,7 @@
         </div>
     </div>
     <script>
-        let listJob = JSON.parse(localStorage.getItem("listJob")) || []; // Load saved tasks from Local Storage
+        let listJob = JSON.parse(localStorage.getItem("listJob")) || [];
         
         function displayListJob() {
             let listItemElement = document.getElementById("list_item");
@@ -85,8 +90,8 @@
         function addListJob() {
             let inputText = document.getElementById("inputText");
             if (inputText.value.trim()) {
-                listJob.push(inputText.value.trim()); // Add task to array
-                localStorage.setItem("listJob", JSON.stringify(listJob)); // Save to Local Storage
+                listJob.push(inputText.value.trim()); 
+                localStorage.setItem("listJob", JSON.stringify(listJob));
                 inputText.value = "";
             }
             displayListJob();
@@ -95,13 +100,11 @@
         function deleteJob(index) {
             let confirmDelete = confirm("Bạn có muốn xóa hay không?");
             if (confirmDelete) {
-                listJob.splice(index, 1); // Remove task from array
-                localStorage.setItem("listJob", JSON.stringify(listJob)); // Update Local Storage
+                listJob.splice(index, 1);
+                localStorage.setItem("listJob", JSON.stringify(listJob));
             }
             displayListJob();
         }
-        
-        // Initialize display on page load
         displayListJob();
     </script>
 </body>
