@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            padding-top: 20px;
+        }
+
+        #product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card {
+            flex: 0 0 calc(16.666% - 10px);
+            width: 100%;
+            height: 450px;
+        }
+
+        .card img {
+            height: 160px;
+            width: 160px;
+            position: relative;
+            left: 20px;
+            top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-body {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-group">
+            <input type="text" id="search" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+            <button class="btn btn-success" id="search-btn">Search</button>
+        </div>
+        <div id="product-list" class="d-flex"></div>
+    </div>
+   <script src="./homework3-ss35.js"></script>
+</body>
+
+</html>

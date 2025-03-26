@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhân viên</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 600px;
+            margin: 0 auto; 
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #pagination {
+            margin-top: 10px;
+            text-align: center;
+        }
+        #pagination button {
+            margin: 0 5px;
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            margin: 0 auto;
+        }
+        .input button {
+            width: 120px;
+            align-self: center;
+            margin-top: 10px;
+        }
+        .input-infor {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .emp-name, .emp-position {
+            border: 1px solid gray;
+            padding-top: 10px;
+            height: 30px;
+        }
+        .emp-name {
+            width: 350px;
+        }
+        .emp-position {
+            width: 250px;
+        }
+        .next-btn, .pre-btn, .pageNumber{
+            border: 1px solid blue;
+            border-radius: 5px;
+            color: blue;
+            background-color: white;
+            height: 35px;
+        }
+        .pre-btn {
+            width: 80px;
+        }
+        .next-btn {
+            width: 60px;
+        }
+        .pageNumber {
+            width: 40px;
+        }
+        .pageNumber.active {
+            background-color: blue;
+            color: white;
+            border-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách nhân viên Rikkei</h1>
+        <div class="input">
+            <div class="input-infor">
+                <div class="emp-name">
+                    <label for="employeeNameInput">Tên nhân viên</label>
+                    <input type="text" id="employeeNameInput">
+                </div>
+                <div class="emp-position">
+                    <label for="employeePositionInput">Chức vụ</label>
+                    <input type="text" id="employeePositionInput">
+                </div>
+            </div>
+            <button onclick="addEmployee()">Thêm nhân viên</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Chức vụ</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+                <tr><td colspan="3">Chưa có nhân viên nào!</td></tr>
+            </tbody>
+        </table>
+        <div id="pagination"></div>
+    </div>
+    <script src="./homework4-ss35.js"></script>
+</body>
+</html>

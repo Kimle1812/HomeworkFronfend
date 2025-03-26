@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            background-color: #6f00ff;
+            height: 500px;
+            width: 500px;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .add {
+            background-color: #5303c2;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            color: white;
+            margin-top: 10px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+
+        #listbookmark {
+            display: flex;
+        }
+
+        #listbookmark div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #5303C2;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        }
+
+        #listbookmark div a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .delete-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 10px;
+            margin-bottom: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .formaddbook {
+            width: 400px;
+            margin-left: 50px;
+            display: none;
+            position: absolute;
+            top: 300px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #7C59B0;
+            padding-left: 10px;
+        }
+
+        .delet {
+            background-color: #7C59B0;
+            border: none;
+            font-size: 25px;
+            color: white;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        .title {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .body {
+            background-color: whitesmoke;
+        }
+
+        label {
+            color: #6f00ff;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 20px;
+            font-size: 12px;
+        }
+
+        input {
+            border: 1px solid #6f00ff;
+            border-radius: 2px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            width: 360px;
+        }
+
+        .btnsave {
+            background-color: #7C59B0;
+            color: white;
+            width: 80px;
+            height: 30px;
+            border: none;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <button class="add" onclick="openForm()">ADD BOOKMARK</button>
+        <div id="listbookmark"></div>
+    </div>
+    <div class="formaddbook">
+        <div class="header">
+            <h3 class="title">Add Bookmark</h3>
+            <button onclick="closeForm()" class="delet">X</button>
+        </div>
+        <div class="body">
+            <label for="">Website Name</label><br>
+            <input id="name" type="text" placeholder="Enter a website name"><br>
+            <label for="">Website URL</label><br>
+            <input id="url" type="text" placeholder="Enter a website URL"><br>
+            <button class="btnsave" onclick="addBookMark()">Save</button>
+        </div>
+    </div>
+    <script>
+        let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+        function render() {
+            let str = "";
+            for (let i = 0; i < bookmarks.length; i++) {
+                str += `
+                    <div>
+                        <a href="${bookmarks[i].url}" target="_blank">${bookmarks[i].name}</a>
+                        <button class="delete-btn" onclick="deleteBookmark(${i})">X</button>
+                    </div>
+                `;
+            }
+            let bookmarkElement = document.getElementById("listbookmark");
+            bookmarkElement.innerHTML = str;
+        }
+
+        function addBookMark() {
+            let name = document.getElementById("name").value || `Bookmark ${bookmarks.length + 1}`;
+            let url = document.getElementById("url").value;
+            if (!url) {
+                alert("URL cannot be empty");
+                return;
+            }
+            let newBookmark = { name, url };
+            bookmarks.push(newBookmark);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+            document.getElementById("name").value = "";
+            document.getElementById("url").value = "";
+            document.querySelector(".formaddbook").style.display = "none";
+            render();
+        }
+
+        function deleteBookmark(index) {
+            bookmarks.splice(index, 1);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+            render();
+        }
+
+        function openForm() {
+            document.querySelector(".formaddbook").style.display = "block";
+        }
+
+        function closeForm() {
+            document.querySelector(".formaddbook").style.display = "none";
+        }
+
+        render();
+    </script>
+</body>
+
+</html>

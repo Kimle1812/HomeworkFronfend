@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-Do List K24</h2>
+    <input type="text" id="taskInput" placeholder="Nhập công việc">
+    <button onclick="addTask()">Thêm</button>
+    <ul id="taskList"></ul>
+    <script>
+        let tasks = (localStorage.getItem('tasks') || '').split(',');
+
+        window.onload = function() {
+            renderTasks();
+        };
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const task = taskInput.value.trim();
+            if (task === '') {
+                alert('Vui lòng nhập công việc!');
+                return;
+            }
+
+            tasks.push(task);
+            localStorage.setItem('tasks', tasks.join(','));
+            taskInput.value = '';
+
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = ''; 
+
+            tasks.forEach((task, index) => {
+                if (task.trim() !== '') { 
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${task}</span>
+                        <div>
+                            <button onclick="editTask(${index})">Sửa</button>
+                            <button onclick="deleteTask(${index})">Xóa</button>
+                        </div>
+                    `;
+                    taskList.appendChild(li);
+                }
+            });
+        }
+
+        function deleteTask(index) {
+            if (confirm('Bạn có chắc chắn muốn xóa công việc này không?')) {
+                tasks.splice(index, 1); 
+                localStorage.setItem('tasks', tasks.join(',')); 
+                renderTasks();
+            }
+        }
+
+        function editTask(index) {
+            const newTask = prompt('Chỉnh sửa công việc:', tasks[index]);
+            if (newTask !== null && newTask.trim() !== '') {
+                tasks[index] = newTask.trim();
+                localStorage.setItem('tasks', tasks.join(',')); 
+                renderTasks();
+            }
+        }
+    </script>
+</body>
+</html>
