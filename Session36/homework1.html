@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap01</title>
+    <style>
+        .container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid rgb(163, 163, 163);
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .container button {
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: rgb(230, 64, 91);
+        }
+        .container input {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Nhập tên của bạn</h2>
+        <input type="text" id="name" placeholder="Nhập tên của bạn">
+        <button onclick="textName()">Lưu</button>
+        <h2 id="text"></h2>
+        <button onclick="changeName()">Đổi tên</button>
+    </div>
+    <script>
+        function textName() {
+            let name = document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            document.getElementById("text").textContent = `👋🏻 Xin chào ${name}`;
+            document.getElementById("name").value = "";
+        }
+        function showText() {
+            let name = localStorage.getItem("name");
+            document.getElementById("text").textContent = `👋🏻 Xin chào ${name}`;
+        }
+        showText();
+        function changeName() {
+            let name = localStorage.getItem("name");
+            document.getElementById("name").value = name;
+        }
+    </script>
+</body>
+</html>

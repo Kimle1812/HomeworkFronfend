@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid rgb(163, 163, 163);
+            width: 400px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .bto1{
+            background-color: red;
+            color: white;
+            border: 1px solid red;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .bto2{
+            background-color: greenyellow;
+            color: white;
+            border: 1px solid greenyellow;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .bto3{
+            background-color: yellow;
+            color: white;
+            border: 1px solid yellow;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .bto4{
+            background-color: violet;
+            color: white;
+            border: 1px solid violet;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chọn màu nền bạn yêu thích </h2>
+        <button onclick="changeColor('red')" class="bto1">Đỏ</button>
+        <button onclick="changeColor('green')" class="bto2">Xanh</button>
+        <button onclick="changeColor('yellow')" class="bto3">Vàng </button>
+        <button onclick="changeColor('violet')" class="bto4">Tím</button>
+    </div>
+    <script>
+        function changeColor(color){
+            console.log(color);
+            document.getElementsByClassName("container")[0].style.backgroundColor=color;
+            localStorage.setItem()
+        }
+    </script>
+</body>
+</html>

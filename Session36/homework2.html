@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 30%;
+            height: 50%;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        .menu{
+            display: flex;
+            margin: 10px;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Món ăn mà bạn thích nhất</h1>
+        <div class="menuTotal">
+
+        </div>
+        <!-- <div class="menu">
+            <img src="https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg" alt="">
+            <div class="like">
+                <h3>bún bò Huế</h3>
+                <p class="text">❤️ lượt thích</p>
+                <button onclick="click1()">thích +1</button>
+            </div>
+        </div>
+        <div class="menu">
+            <img src="https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg" alt="">
+            <div class="like">
+                <h3>bánh mì pate</h3>
+                <p class="text">❤️ lượt thích</p>
+                <button onclick="click2()">thích +1</button>
+            </div>
+        </div>
+        <div class="menu">
+            <img src="https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg" alt="">
+            <div class="like">
+                <h3>Cơm tấm Sài Gòn</h3>
+                <p class="text">❤️ lượt thích</p>
+                <button onclick="click3()">thích +1</button>
+            </div>
+        </div> -->
+    </div>
+    <script>
+        //lấy dữ liệu tiwf local
+        let arr = JSON.parse(localStorage.getItem("arr")) || [
+            {
+                id:1,
+                image:"https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg",
+                name:"Bún bò Huế",
+                like:0,
+            },
+            {
+                id:2,
+                image:"https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg",
+                name:"Bánh Mì",
+                like:0,
+            },
+            {
+                id:3,
+                image:"https://chefjob.vn/wp-content/uploads/2018/08/banh-mi-thit-sai-gon.jpg",
+                name:"Bánh đa cua",
+                like:0,
+            },
+        ];
+        //lưu vào local
+        localStorage.setItem("key",JSON.stringify(arr));
+        function render(){
+            let str = "";
+            for(let i = 0 ; i < arr.length ; i++){
+                str += `
+                    <div class="menu">
+                        <img src="${arr[i].image}" alt="">
+                        <div class="like">
+                            <h3>${arr[i].name}</h3>
+                            <p class="text">❤️ ${arr[i].like}lượt thích</p>
+                            <button onclick="clickLike(${i})">thích +1</button>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementsByClassName("menuTotal")[0].innerHTML =str;
+        }
+        render();
+        function clickLike(index){
+            arr[index].like = arr[index].like+1;
+            localStorage.setItem("arr",JSON.stringify(arr));
+            render();
+        }
+    </script>
+</body>
+</html>
