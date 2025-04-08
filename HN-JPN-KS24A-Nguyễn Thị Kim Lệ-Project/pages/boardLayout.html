@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/boardLayout.css">
+</head>
+<body>
+    <div class="body">
+        <!-- HTML trang Board Layout -->
+        <div class="board-layout">
+            <div class="logo"><a href=""><img src="/assets/images/trello-logo-full.png.png" alt="No Imgage" width="80px" height="17px"></a></div>
+            <div class="main">
+                <div class="main-left">
+                    <div>
+                        <p>YOUR WORKSPACES</p>
+                        <ul >
+                            <li class="icon">
+                                <img src="/assets/icons/Icon.png" alt="No Icon">
+                                <b>Boards</b>
+                            </li>
+                            <li class="icon">
+                                <img src="/assets/icons/Icon (1).png" alt="No Icon">
+                                <b>Starred Boards</b>
+                            </li>
+                            <li class="icon">
+                                <img src="/assets/icons/Icon (2).png" alt="No Icon">
+                                <b>Closed Boards</b>
+                            </li >
+                            <hr>
+                            <li class="your-boards">
+                                <b>Your boards</b>
+                                <img src="/assets/icons/Frame.png" alt="" width="16px" height="16px">
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-right">
+                    <div class="right-top">
+                        <div class="content-one">
+                            
+                            <h3>Tổ chức sự kiện Year-end party !</h3>
+                            <img src="/assets/icons/Icon (5).png" alt="" width="16px" height="16px" class="header-image">
+                            <button class="button-board">
+                                <img src="/assets/icons/Frame (1).png" alt="">
+                                <span>Board</span>
+                            </button>
+                            <button class="button-table">
+                                <img src="/assets/icons/Frame (2).png" alt="">
+                                <span>Table</span>
+                            </button>
+                            <button class="button-close" onclick="showClose()">
+                                <img src="/assets/icons/Icon (9).png" alt="">
+                                <span>Close this board</span>
+                            </button>
+                        </div>
+                        <button class="content-two">
+                            <img src="/assets/images/Img - Filter cards.png" alt="">
+                            <span onclick="showFilter()">Filter</span>
+                        </button>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="content-one">
+                            <div class="header">
+                                <span>Todo</span>
+                                <div class="header-icon">
+                                    <img src="/assets/icons/Button.png" alt="" width="32px" height="32px">
+                                    <img src="/assets/icons/Button menu.png" alt="" width="32px" height="32px">
+                                </div>
+                            </div>
+                            <div class="center">
+                                <ul>
+                                    <li><img src="/assets/icons/Img - Complete.png" alt="">Thuê DJ</li>
+                                    <li>Lên kịch bản chương trình</li>
+                                    <li>Chuẩn bị kịch</li>
+                                    <li onclick="showScript()">Kịch bản</li>
+                                    <li>Thuê MC</li>
+                                </ul>
+                                <div class="addCard">
+                                    <input type="text" placeholder="Enter a title or paste a link"><br>
+                                    <div class="button-addCard">
+                                        <button>Add card</button>
+                                        <img src="/assets/icons/SVG.png" alt="" width="24px" height="24px" onclick="hideAddCard()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="final">
+                                <div>
+                                    <img src="/assets/icons/Frame.png" alt="">
+                                    <span onclick="showAddCard()">Add a card</span>
+                                </div>
+                                <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
+                            </div>
+                        </div>
+                        <div class="content-two">
+                            <div class="header">
+                                <span>In-progress</span>
+                                <div class="header-icon">
+                                    <img src="/assets/icons/Button.png" alt="">
+                                    <img src="/assets/icons/Button menu.png" alt="">
+                                </div>
+                            </div>
+                            <div class="final">
+                                <div>
+                                    <img src="/assets/icons/Frame.png" alt="">
+                                    <span >Add a card</span>
+                                </div>
+                                <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
+                            </div>
+                        </div>
+                        <div class="content-three">
+                            <div class="final">
+                                <img src="/assets/icons/Frame.png" alt="">
+                                <span onclick="showAddList()">Add another list</span>
+                            </div>
+                            <div class="addList">
+                                <input type="text" placeholder="Enter a title or paste a link"><br>
+                                <div class="button-addList">
+                                    <button>Add list</button>
+                                    <img src="/assets/icons/SVG.png" alt="" width="24px" height="24px" onclick="hideAddCard()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang Filter Dropdown -->
+        <div class="filterDropdown">
+            <div class="container">
+                <div class="filterHeader">
+                    <div></div>
+                    <b>Filter</b>
+                    <img src="/assets/icons/SVG.png" alt="" width="16px" height="16px" onclick="hide()">
+                </div>
+                <div class="filterContent">
+                    <h5>Keyword</h5>
+                    <input type="text" class="keyword" placeholder="Enter a keyword...">
+                    <p>Search cards, </p>
+                    <h5>Card</h5>
+                    <div class="content">
+                        <input type="checkbox content-checkbox"> Marked as complete<br>
+                        <input type="checkbox content-checkbox">Not marked as complete
+                    </div>
+                    <h5>Due date</h5>
+                    <div class="content content-checkbox">
+                        <input type="checkbox content-checkbox" >
+                        <img src="/assets/icons/Overlay.png" alt="">
+                        <span>No dates</span>
+                    </div>
+                   
+                    <div class="content content-checkbox">
+                        <input type="checkbox">
+                        <img src="/assets/icons/Background (5).png" alt="">
+                        <span>Overdue</span>
+                    </div>
+                    <div class="content content-checkbox">
+                        <input type="checkbox" >
+                        <img src="/assets/icons/Background (6).png" alt="">
+                        <span>Due in the next day</span>
+                    </div>
+                   
+                    <h5>Labels</h5>
+                    <div class="content">
+                        <div class="content-noLable"><input type="checkbox" ><img src="/assets/icons/Overlay (1).png" alt=""> No labels</div>
+                        <div class="content-checkbox"><input type="checkbox" ><button class="buttonGreen"></button></div>
+                        <div class="content-checkbox"><input type="checkbox" ><button class="buttonYellow"></button></div>
+                        <div class="content-checkbox"><input type="checkbox" ><button class="buttonOrange"></button></div>
+                        <div class="content-checkbox"><input type="checkbox"> <select name="" id=""><option value="">Select labels</option></select></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang CLose Board -->
+        <div class="closeBoard">
+            <div class="contentClose">
+                <div><img src="/assets/icons/Border.png" alt=""></div>
+                <h2>Are you sure?</h2>
+                <p>You won't be able to revert this!</p>
+                <div class="button">
+                    <button class="button-yes">Yes, close it!</button>
+                    <button class="button-cancel" onclick="hide()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang Detail Modal -->
+        <div class="detailModal">
+            <!-- HTML trang chính Detail -->
+            <div class="detailModal-main">
+                <div class="detailHeader">
+                    <div class="detailHeader-top">
+                        <img src="/assets/icons/Img - Incomplete.png" alt="" width="16px" height="16px">
+                        <b>Kịch bản</b>
+                    </div>
+                    <div class="detailHeader-bottom">
+                        <span>in list</span>
+                        <button class="button-inProgress" onclick="showMoveCard()">
+                            <span>IN-PROGRESS</span> 
+                            <img src="/assets/icons/Frame (6).png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="detailContent">
+                    <div class="detailContent-left">
+                        <div>
+                            <img src="/assets/icons/Vector (5).png" alt="">
+                            <b>Description</b>
+                        </div>
+                        <div class="detailContent-input">
+                            <input type="text">
+                            <div class="detailContent-img">
+                                <img src="/assets/icons/Button menu - normal Text styles.png" alt="" width="44px" height="24px"><hr>
+                                <img src="/assets/icons/Frame (8).png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button - Italic ⌘I.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button menu - More formatting.png" alt="" width="24px" height="24px"><hr>
+                                <img src="/assets/icons/Button menu - Lists.png" alt="" width="40px" height="24px"><hr>
+                                <img src="/assets/icons/Button dialog - Link ⌘K.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button - Image.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Frame (10).png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Frame (11).png" alt="" width="24px" height="24px"><hr>
+                                <img src="/assets/icons/Button - Writing assistant.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button - Attach and insert link.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button - View Markdown.png" alt="" width="24px" height="24px">
+                                <img src="/assets/icons/Button (1).png" alt="" width="24px" height="24px">
+                            </div>
+                            <hr class="hr">
+                        </div>
+                        <div>
+                            <button class="button-save">Save</button>
+                            <button class="button-cancel" onclick="hide()">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="detailContent-right">
+                        <button onclick="showCreateLabels()">
+                            <img src="/assets/icons/Frame (7).png" alt="" width="16px" height="16px"> 
+                            <span>Labels</span>
+                        </button>
+                        <button onclick="showDates()">
+                            <img src="/assets/icons/Frame (9).png" alt="" width="16px" height="16px">
+                            <span>Dates</span>
+                        </button>
+                        <button class="button-delete" onclick="showDelete()">
+                            <img src="/assets/icons/Frame (12).png" alt="" width="16px" height="16px">
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML trang  IN-PROGRESS Detail -->
+            <div class="detailModal-inProgress">
+                <div class="inProgress-header">
+                    <b>Move card</b>
+                    <img src="/assets/icons/Vector (6).png" alt="" width="10px" height="10px" onclick="hideDetailModal()">
+                </div>
+                <div class="inProgress-content">
+                    <p>Select destination</p>
+                    <b>Board</b><br>
+                    <input type="text" placeholder="Tổ chức sự kiện Year-end party !" class="inProgress-input">
+                    <div class="inProgress-option">
+                        <div>
+                            <label for="">List</label><br>
+                            <select name="" id="" class="option1">
+                                <option value="">In-progress</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Position</label><br>
+                            <select name="" id="" class="option2">
+                                <option value="">1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="inProgress-footer">Move</button>
+            </div>
+            <!-- HTML trang  Label Detail -->
+            <div class="detailModal-labels">
+                <div class="createLabels-header">
+                    <img src="/assets/icons/SVG (1).png" alt="" width="16px" height="16px">
+                    <b>Create label</b>
+                    <img src="/assets/icons/Vector (6).png" alt="" width="10px" height="10px" onclick="hideDetailModal()">
+                </div>
+                <div class="createLabels-content">
+                    <div class="content-title">
+                        <div><b>Title</b></div>
+                        <input type="text">
+                    </div>
+                    <div><b>Select a color</b></div>
+                    <div class="content-select">
+                        <div class="color lightGreen"></div>
+                        <div class="color lightYellow"></div>
+                        <div class="color lightPeach"></div>
+                        <div class="color lightPink"></div>
+                        <div class="color lightPurple"></div>
+                        <div class="color green"></div>
+                        <div class="color yellow"></div>
+                        <div class="color peach"></div>
+                        <div class="color pink"></div>
+                        <div class="color purple"></div>
+                    </div>
+                </div>
+                <hr>
+                <button class="createLabels-footer">Create</button>
+            </div>
+            <!-- HTML trang  Dates Detail -->
+            <div class="detailModal-dates">
+                <div class="dates-header">
+                    <div class="header-top">
+                        <b>Dates</b>
+                        <img src="/assets/icons/Vector (6).png" alt="" width="10px" height="10px" onclick="hideDetailModal()" >
+                    </div>
+                    <div class="header-bottom">
+                        <img src="/assets/icons/Button (2).png" alt="" width="24px" height="24px">
+                        <b>March 2025</b>
+                        <img src="/assets/icons/Button (3).png" alt="" width="24px" height="24px">
+                    </div>
+                </div>
+                <div class="dates-content">
+                    <div class="content-top">
+                        <div class="dates-spanColor">Sun</div>
+                        <div class="dates-spanColor" >Mon</div>
+                        <div class="dates-spanColor">Tue</div>
+                        <div class="dates-spanColor">Wed</div>
+                        <div class="dates-spanColor">Thu</div>
+                        <div class="dates-spanColor">Fri</div>
+                        <div class="dates-spanColor">Sat</div>
+                        <div class="dates-backgroundgrey">23</div>
+                        <div class="dates-backgroundgrey">24</div>
+                        <div class="dates-backgroundgrey">25</div>
+                        <div class="dates-backgroundgrey">26</div>
+                        <div class="dates-backgroundgrey">27</div>
+                        <div class="dates-backgroundgrey">28</div>
+                        <div class="dates-backgroundblue">1</div>
+                        <div class="dates-backgroundblack">2</div>
+                        <div class="dates-backgroundblack">3</div>
+                        <div class="dates-backgroundblack">4</div>
+                        <div class="dates-backgroundblack">5</div>
+                        <div class="dates-backgroundblack">6</div>
+                        <div class="dates-backgroundblack">7</div>
+                        <div class="dates-backgroundblack">8</div>
+                        <div class="dates-backgroundblack">9</div>
+                        <div class="dates-backgroundblack">10</div>
+                        <div class="dates-backgroundblack">11</div>
+                        <div class="dates-backgroundblack">12</div>
+                        <div class="dates-backgroundblack">13</div>
+                        <div class="dates-backgroundblack">14</div>
+                        <div class="dates-backgroundblack">15</div>
+                        <div class="dates-backgroundblack">16</div>
+                        <div class="dates-backgroundblack">17</div>
+                        <div class="dates-backgroundblack">18</div>
+                        <div class="dates-backgroundblack">19</div>
+                        <div class="dates-backgroundblack">20</div>
+                        <div class="dates-backgroundblack">21</div>
+                        <div class="dates-backgroundblack">22</div>
+                        <div class="dates-backgroundblack">23</div>
+                        <div class="dates-backgroundblack">24</div>
+                        <div class="dates-backgroundblack">25</div>
+                        <div class="dates-backgroundblack">26</div>
+                        <div class="dates-backgroundblack">27</div>
+                        <div class="dates-backgroundblack">28</div>
+                        <div class="dates-backgroundblack">29</div>
+                        <div class="dates-backgroundblack">30</div>
+                        <div class="dates-backgroundblack">31</div>
+                        <div class="dates-backgroundgrey">1</div>
+                        <div class="dates-backgroundgrey">2</div>
+                        <div class="dates-backgroundgrey">3</div>
+                        <div class="dates-backgroundgrey">4</div>
+                        <div class="dates-backgroundgrey">5</div>
+                    </div>
+                    <div class="content-bottom">
+                        <div>
+                            <div>Start</div>
+                            <input type="checkbox"><input type="text" class="input-start"><br>
+                        </div>
+                        <div>
+                            <div>Due date</div>
+                            <input type="checkbox"><input type="text" placeholder="M/D/YYYY" class="input-date"><input type="text" placeholder="h:mm a" class="input-date">
+                        </div>
+                    </div>
+                </div>
+                <div class="dates-footer">
+                    <button class="button-save">Save</button>
+                    <button class="button-remove">Remove</button>
+                </div>
+            </div>
+            <!-- HTML trang Delete Board -->
+            <div class="deleteBoard">
+                <div class="contentDelete">
+                    <div><img src="/assets/icons/Border.png" alt=""></div>
+                    <h2>Are you sure?</h2>
+                    <p>You won't be able to revert this!</p>
+                    <div class="button">
+                        <button class="button-yes">Yes, delete it!</button>
+                        <button class="button-cancel" onclick="hideDetailModal()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <script src="/js/boardLayout.js"></script>
+</body>
+</html>

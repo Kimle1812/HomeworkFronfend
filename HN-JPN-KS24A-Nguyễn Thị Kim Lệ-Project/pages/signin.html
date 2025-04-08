@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signin.css">
+</head>
+<body>
+    <div class="body">
+        <div class="container">
+            <img src="https://s3-alpha-sig.figma.com/img/fce0/042c/ca5b6e2508cf4ff2bc1e084090c613c0?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ijMT-AEwwt-BgnhWHWQW9xJyti7bFATzxYWbsYEcQwRGypFHS3XLNtuDmWdpORu27UZjf1rm2gsA45q8CMJ8Fa2Lqd-9ickmDkl8cCYv3PLd67JshF9YIud2uorNQlJLPUOW11dB0Vumv-8aZknCGu-QwqrBJBDrEdbLq8M8xh5ajksUASo0swQ1J0UL1wG90vjSwqt4brziQLtkxAuHOcbP7brGVbtbhZoNaz0iOMI70ljD35jvehXBKyL6mrnBpLPn9xpXNqKrdfHQPzyAxvIGxsrZcAYKGN420lN15khCvuSP5djbiLO3p6r631h736DGmWPMHFEacROwGG16HA__" alt="No Logo" width="150px" height="43px">
+            <div class="main">
+                <p class="text-signup">Please sign in</p>
+                <div class="content">
+                    <input type="email" class="email" placeholder="Email address"><br>
+                    <input type="password" class="password" id="" placeholder="Password"><br>
+                </div>
+                <input type="checkbox" class="checkbox">Remember me
+                <p>Don't have an account,  <a href="./signup.html">click here!</a></p>
+                <button onclick="signin()">Sign in</button>
+            </div>
+            <p class="footer">&copy; 2025 - Rikkei Education</p>
+        </div>
+    </div>
+    <!-- HTML phan thong bao -->
+    <div class="notification">
+        <!-- HTML phan Error -->
+        <button class="error">
+            <div class="errol-top">
+                <div class="errol-top_icon">
+                    <div>
+                        <img src="/assets/icons/remove_circle.png" alt="Error-icon">
+                    </div>
+                    <span>Error</span>
+                </div>
+                <div>
+                    <img src="/assets/icons/close.png" alt="Clear-icon" onclick="hide()">
+                </div>
+            </div>
+            <div class="errol-bot">
+                <div>Mật khẩu không được bỏ trống</div>
+                <div>Email không được bỏ trống</div>
+            </div>
+        </button>
+        <button class="error-notExist">
+            <div class="errol-top">
+                <div class="errol-top_icon">
+                    <div>
+                        <img src="/assets/icons/remove_circle.png" alt="Error-icon">
+                    </div>
+                    <span>Error</span>
+                </div>
+                <div>
+                    <img src="/assets/icons/close.png" alt="Clear-icon" onclick="hideExist()">
+                </div>
+            </div>
+            <div class="errol-bot">
+                <div>Email hoặc Mật khẩu không tồn tại</div>
+            </div>
+        </button>
+        <!-- HTML phan success -->
+        <button class="success">
+            <div class="success-icon">
+                <img src="/assets/icons/Img - Complete.png" alt="Success-cion">
+            </div>
+            <span>Đăng nhập thành công</span>
+        </button>
+    </div>
+    <script src="/js/signin.js"></script>
+</body>
+</html>

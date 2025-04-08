@@ -1,0 +1,902 @@
+/* CSS trang chính Board Layout */
+body{
+    color: #172B4D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo{
+    padding: 10px 20px;
+    border-right: 1px solid rgb(144, 144, 144);
+    width: 17%;
+}
+.main{
+    display: flex;
+
+}
+.main-left{
+    width: 17%;
+    height: 760px;
+    border-right: 1px solid rgb(144, 144, 144);
+    background-color: #F8F9FA;
+}
+.main-left p{
+    padding: 12px;
+    color:#212529BF;
+    opacity: 0.75;
+    font-size: 12px;
+}
+.main-left li{
+    padding: 11px;
+    /* line-height: 21px; */
+}
+.main-left b{
+    padding: 12px;
+    color: #0D6EFD;
+    font-size: 14px;
+}
+.main-left .your-boards{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 13px;
+}
+.main-left .your-boards b{
+    color: #172B4D;
+}
+/* CSS phan main right-top */
+.main-right{
+    width: 83%;
+}
+.right-top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F1F2F4;
+    height: 56px;
+
+}
+.right-top .content-one{
+    display: flex;
+    gap: 15px;
+}
+.right-top .content-one h3{
+    margin: 20px 10px;
+    margin-left: 20px;
+}
+.right-top .content-one .header-image{
+    margin: 20px 10px;
+}
+.right-top .content-one .button-board{
+    background-color: #000000;
+    opacity: 0.5;
+    color: white;
+    width: 85px;
+    height: 34px;
+    border-radius: 3px;
+    border: none;
+    margin:10px 0px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.right-top .content-one .button-table{
+    background-color: #F1F2F4;
+    color: #172B4D;
+    width: 85px;
+    height: 34px;
+    border: none;
+    margin:10px 0px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.right-top .content-one .button-close{
+    background-color: #F1F2F4;
+    color: #172B4D;
+    width:150px;
+    height: 34px;
+    border: none;
+    margin:10px 0px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.right-top .content-two{
+    background-color: #F1F2F4;
+    color: #172B4D;
+    width: 85px;
+    height: 34px;
+    border: none;
+    margin:10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+/* CSS phan main right-bottom */
+.right-bottom{
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+.right-bottom .content-one{
+    background-color: #F1F2F4;
+    width: 272px;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.right-bottom .content-one .header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.right-bottom .content-one .header span{
+    margin-top: 15px;
+}
+.right-bottom .content-one .header .header-icon img{
+    margin-top: 5px;
+    gap: 10px;
+}
+.right-bottom .content-one .center ul{
+    line-height: 30px;
+}
+.right-bottom .content-one .center ul li{
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px 10px ;
+}
+.right-bottom .content-one .center ul li img{
+    margin-right: 5px;
+}
+.right-bottom .content-one .center .addCard input{
+    width: 254px;
+    height: 56px;
+    border-radius: 8px;
+    padding-left: 12px;
+    font-size: 16px;
+    border: none;
+    margin-top: 5px;
+}
+.right-bottom .content-one .center .addCard input::placeholder{
+    color: #626F86;
+    padding-bottom: 5px;
+
+}
+.right-bottom .content-one .center .addCard .button-addCard{
+    display: flex;
+    gap: 20px;
+    margin: 10px 0px;
+}
+.right-bottom .content-one .center .addCard .button-addCard button{
+    width: 84px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    background-color: #0C66E4;
+    color: white;
+    font-size: 16px;
+}
+.right-bottom .content-one .center .addCard .button-addCard img{
+    margin-top: 5px;
+}
+.right-bottom .content-one .center .addCard{
+    display: none;
+}
+.right-bottom .content-one .final{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+.right-bottom .content-two{
+    background-color: #F1F2F4;
+    width: 272px;
+    height: 88px;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.right-bottom .content-two .header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.right-bottom .content-two .header span{
+    margin-top: 15px;
+}
+.right-bottom .content-two .header .header-icon img{
+    margin-top: 5px;
+    gap: 10px;
+}
+.right-bottom .content-two .final{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.right-bottom .content-three .final{
+    padding-left: 10px;
+    background-color: #F1F2F4;
+    width: 272px;
+    border-radius: 10px;
+    padding: 11px 10px;
+}
+.right-bottom .content-three .addList input{
+    width: 254px;
+    height: 56px;
+    border-radius: 8px;
+    padding-left: 12px;
+    font-size: 16px;
+    border: none;
+    margin-top: 5px;
+}
+.right-bottom .content-three .addList input::placeholder{
+    color: #626F86;
+    padding-bottom: 5px;
+
+}
+.right-bottom .content-three .addList .button-addList{
+    display: flex;
+    gap: 20px;
+    margin: 10px 0px;
+}
+.right-bottom .content-three .addList .button-addList button{
+    width: 84px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    background-color: #0C66E4;
+    color: white;
+    font-size: 16px;
+}
+.right-bottom .content-three .addList .button-addList img{
+    margin-top: 5px;
+}
+.right-bottom .content-three .addList{
+    padding-left: 10px;
+    background-color: #F1F2F4;
+    width: 272px;
+    border-radius: 10px;
+    padding: 11px 10px;
+    display:none;
+}
+/* CSS trang tìm kiếm Filter Dropdown */
+.filterDropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #44546F;
+    margin: 20px;
+    position: absolute;
+    top: 30px;
+    left: 35%;
+}
+.filterDropdown h5{
+    font-size: 12px;
+}
+.container{
+    background-color: white;
+    width: 384px;
+    height: 685px;
+    border-radius: 8px;
+    border: 1px solid rgb(203, 200, 200);
+    box-shadow: 5px 5px 5px #091E424F;
+}
+.filterHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.filterContent{
+    line-height: 35px;
+    margin:0px 15px;
+}
+.filterContent .keyword{
+    width: 352px;
+    height: 36px;
+    border-radius: 3px;
+    border: 2px solid #8590A2;
+}
+.filterContent .keyword::placeholder{
+    color: #626F86;
+    font-size: 14px;
+    padding-left: 5px;
+}
+.filterContent .content input{
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+}
+.filterContent .content img{
+    margin-right: 10px;
+}
+.filterContent .content .buttonGreen{
+    width: 312px;
+    height: 32px;
+    border: none;
+    border-radius:3px;
+    background-color: #4BCE97;
+}
+.filterContent .content .buttonYellow{
+    width: 312px;
+    height: 32px;
+    border: none;
+    border-radius:3px;
+    background-color: #F5CD47;
+}
+.filterContent .content .buttonOrange{
+    width: 312px;
+    height: 32px;
+    border: none;
+    border-radius:3px;
+    background-color: #FEA362;
+}
+.filterContent .content select{
+    width: 312px;
+    height: 40px;
+    border: none;
+    color: #626F86;
+    font-size: 16px;
+}
+.filterContent .content-checkbox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.filterContent .content-noLable{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 205px;
+}
+.filterDropdown{
+    display: none;
+    z-index: 999;
+}
+/* CSS trang Close Boards */
+.closeBoard{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    position: absolute;
+    top: 0px;
+    left: 35%;
+}
+.contentClose{
+    width: 512px;
+    height: 342px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 65px;
+    border: 1px solid rgb(208, 208, 208);
+    background-color: white;
+}
+.content div{
+    display: flex;
+    justify-content: center;
+}
+.contentClose img{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin-top: 44px;
+}
+.contentClose h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentClose p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentClose .button .button-yes{
+    width: 140px;
+    border: none;
+    height: 40px;
+    background-color: #3085D6;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.contentClose .button .button-cancel{
+    width: 90px;
+    border: none;
+    height: 40px;
+    background-color: #DD3333;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.closeBoard{
+    display: none;
+    z-index: 999;
+}
+/* CSS  trang Detail Modal */
+
+/* CSS  trang chính Detail */
+.detailModal-main{
+    width: 768px;
+    height: 497px;
+    border-radius: 12px;
+    border: 1px solid rgb(196, 194, 194);
+    background-color: white;
+    padding: 25px;
+    position: absolute;
+    top: 150px;
+    left: 28%;
+}
+.detailHeader .detailHeader-top{
+    display: flex;
+    gap: 6px;
+}
+.detailHeader .detailHeader-top b{
+    font-weight: 700;
+    font-size: 20px;
+    color: #172B4D;
+    margin-left: 10px;
+}
+.detailHeader .detailHeader-bottom{
+    margin: 15px 35px;
+    display: flex;
+    gap: 5px;
+}
+.detailHeader .detailHeader-bottom .button-inProgress{
+    width: 104px;
+    height: 16px;
+    border-radius: 3px;
+    border: none;
+    background-color: #DCDFE4;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2px;
+}
+.button-inProgress span{
+    font-size: 11px;
+    font-weight: 700;
+    color: #44546F;
+}
+.detailContent{
+    display: flex;
+    gap:10px;
+}
+.detailContent-left{
+    width: 552px;
+    height: 359px;
+
+}
+.detailContent-left div b{
+    font-size: 20px;
+    color: #172B4D;
+    margin-left: 10px;
+}
+.detailContent-input{
+    position: relative;
+}
+.detailContent-left .detailContent-input input{
+    width: 512px;
+    height: 275px;
+    border: 1px solid #8590A2;
+    margin-top: 20px;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+.detailContent-input .detailContent-img{
+    position: absolute;
+    padding: 10px 0px;
+    top: 20px;
+    display: flex;
+
+}
+.detailContent-input .hr{
+    width: 508px;
+    opacity: 0.5;
+    position: absolute;
+    top: 60px;
+}
+.detailContent-input .detailContent-img hr{
+    height: 20px;
+    width: 1px;
+}
+.detailContent-input .detailContent-img img{
+    margin: 6px;
+}
+.detailContent-left .button-save{
+    width: 56px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #0C66E4;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.detailContent-left .button-cancel{
+    width: 56px;
+    height: 32px;
+    background-color: white;
+    color:#172B4D;
+    border: none;
+    font-size: 16px;
+}
+.detailContent-right button{
+    width: 168px;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    background-color: #091E420F;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.detailContent-right button span{
+    color: #172B4D;
+}
+.detailContent-right .button-delete{
+    background-color: red;
+}
+.detailContent-right .button-delete span{
+    color: rgb(228, 223, 223);
+}
+.detailModal-main{
+    display: none;
+    z-index: 999;
+}
+/* CSS  trang  IN-PROGRESS Detail */
+.detailModal-inProgress{
+    width: 304px;
+    height: 320px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid rgb(185, 180, 180);
+    padding: 10px;
+    position: absolute;
+    top: 200px;
+    left: 40%;
+
+}
+.inProgress-header{
+    display: flex;
+    justify-content: flex-end;
+    gap:90px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+.inProgress-header b{
+    color: #44546F;
+    font-weight: 600;
+}
+
+.inProgress-content p{
+    margin: 18px 0px;
+    color: #44546F;
+}
+.inProgress-content .inProgress-input{
+    width: 280px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #8590A2;
+    margin-top: 10px;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+.inProgress-content .inProgress-input::placeholder{
+    font-size: 16px;
+    font-weight: 400;
+    color: #172B4D;
+    padding-left: 7px;
+}
+.inProgress-content .inProgress-option{
+    display: flex;
+    gap: 7px;
+    margin: 20px 0px;
+}
+.inProgress-content .inProgress-option .option1{
+    width: 195px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #8590A2;
+    color: #172B4D;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.inProgress-content .inProgress-option .option2{
+    width: 78px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #8590A2;
+    color: #172B4D;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.inProgress-content label{
+    font-size: 16px;
+    color: #172B4D;
+    font-weight: 700;
+}
+.inProgress-footer{
+    width: 85px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #0C66E4;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+}
+.detailModal-inProgress{
+    display: none;
+    z-index: 999;
+}
+/* CSS  trang  Label Detail */
+.detailModal-labels{
+    width: 304px;
+    height: 309px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid rgb(185, 180, 180);
+    position: absolute;
+    top: 200px;
+    left: 40%;
+}
+.createLabels-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.createLabels-content{
+    margin: 10px 12px;
+}
+.createLabels-content input{
+    width: 280px;
+    height: 36px;
+    border-radius: 3px;
+    border: 1px solid #8590A2;
+    margin: 12px 0px;
+}
+.createLabels-content .content-select{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0px;
+}
+.createLabels-content .content-select .color{
+    width: 50px;
+    height: 32px;
+    border-radius: 3px;
+}
+.lightGreen{
+    background-color: #BAF3DB;
+}
+.lightYellow{
+    background-color: #F8E6A0;
+}
+.lightPeach{
+    background-color: #FEDEC8;
+}
+.lightPink{
+    background-color: #FFD5D2;
+}
+.lightPurple{
+    background-color: #DFD8FD;
+}
+.green{
+    background-color: #4BCE97;
+}
+.yellow{
+    background-color: #F5CD47;
+}
+.peach{
+    background-color: #FEA362;
+}
+.pink{
+    background-color: #F87168;
+}
+.purple{
+    background-color: #9F8FEF;
+}
+.detailModal-labels hr{
+    opacity: 0.5;
+    margin: 0px 12px;
+}
+.createLabels-footer{
+    margin: 10px 12px;
+    width: 68px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    background-color: #0C66E4;
+    color: white;
+}
+.detailModal-labels{
+    display: none;
+    z-index: 999;
+}
+/* CSS trang  Dates Detail */
+.detailModal-dates{
+    width: 304px;
+    height: 560px;
+    border-radius: 8px;
+    border: 1px solid #8590A2;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 100px;
+    left: 40%;
+}
+.dates-header .header-top{
+    display: flex;
+    justify-content: flex-end;
+    gap:100px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.dates-header .header-top b{
+    font-size: 14px;
+    color: #44546F;
+
+}
+.dates-header .header-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.dates-header .header-bottom b{
+    font-size: 15px;
+    color:#172B4D;
+}
+.dates-content .content-top{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.dates-content .content-top div{
+    width: 40px;
+    height: 32px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 14px;
+}
+.dates-content .dates-spanColor{
+    color: #44546F;
+    font-size: 12px;
+    font-weight: 700px;
+}
+.dates-content .dates-backgroundblue{
+    background-color: #E9F2FF;
+    color: #0C66E4;
+    margin-bottom: 5px;
+}
+.dates-content .dates-backgroundgrey{
+    background-color: white;
+    color: #626F86;
+}
+.dates-content .dates-backgroundblack{
+    background-color: white;
+    color: #172B4D;
+    
+}
+.content-bottom div{
+    font-size: 14px;
+    font-weight: 700;
+    color: #44546F;
+    margin: 10px 0px;
+}
+.content-bottom .input-start{
+    border-radius: 3px;
+    border: 1px solid #8590A2;
+    width: 90px;
+    height: 32px;
+}
+.content-bottom .input-date{
+    width: 90px;
+    height: 32px;
+    border: none;
+    background-color: rgb(244, 241, 241);
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.content-bottom .input-date::placeholder{
+    padding-left: 5px;
+}
+.dates-footer .button-save{
+    background-color: #0C66E4;
+    font-size: 14px;
+    color: white;
+    width: 280px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    margin-top: 10px;
+}
+.dates-footer .button-remove{
+    background-color: #ebebec;
+    font-size: 14px;
+    color: #172B4D;
+    width: 280px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    margin-top: 10px;
+}
+.detailModal-dates{
+    display: none;
+    z-index: 999;
+}
+/* CSS trang Close Boards */
+.deleteBoard{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    position: absolute;
+    top: 0px;
+    left: 35%;
+}
+.contentDelete{
+    width: 512px;
+    height: 342px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 65px;
+    border: 1px solid rgb(208, 208, 208);
+    background-color: white;
+}
+.content div{
+    display: flex;
+    justify-content: center;
+}
+.contentDelete img{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin-top: 44px;
+}
+.contentDelete h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentDelete p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentDelete .button .button-yes{
+    width: 140px;
+    border: none;
+    height: 40px;
+    background-color: #3085D6;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.contentDelete .button .button-cancel{
+    width: 90px;
+    border: none;
+    height: 40px;
+    background-color: #DD3333;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.deleteBoard{
+    display: none;
+    z-index: 999;
+}
+/* CSS chuyen doi giữa các giao diện */
+.body{
+    position: relative;
+}

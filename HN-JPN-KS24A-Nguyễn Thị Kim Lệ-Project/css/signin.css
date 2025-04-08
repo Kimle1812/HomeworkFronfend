@@ -1,0 +1,117 @@
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+}
+.body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.container img{
+    margin-left: 80px;
+}
+.main{
+    line-height: 20px;
+}
+.main .checkbox{
+    margin-top: 20px;
+}
+.main .text-signup{
+    font-size: 27px;
+    color: #212529;
+}
+.main .content{
+    line-height: 0px;
+}
+.main .content input{
+    width: 296px;
+    height: 56px;
+    border: 1px solid #DEE2E6;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.main .content input::placeholder{
+    color: #212529;
+    font-weight: 400;
+    font-size: 16px;
+}
+.main a{
+    color: #0D6EFD;
+}
+.main button {
+    width: 296px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0D6EFD;
+    color:#FFFFFF;
+    text-align: center;
+}
+.container .footer{
+    color: #212529BF;
+    opacity: 0.75;
+    font-size: 16px;
+    margin-top: 50px;
+}
+/* CSS phan thong bao */
+.notification{
+    position: absolute;
+    top: 40px;
+    margin-left: 20px;
+}
+/* CSS phan error */ 
+.error{
+    width: 299px;
+    height: auto;
+    background-color: #FFE5E8;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+.error-notExist{
+    width: 299px;
+    height: auto;
+    background-color: #FFE5E8;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    display: none;
+    margin-top: 10px;
+}
+.errol-top{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+.errol-top_icon{
+    display: flex;
+    gap: 10px;
+}
+.errol-bot div{
+    margin: 10px;
+}
+.error{
+    display: none;
+}
+/* CSS phan success */
+.success{
+    width: 299px;
+    height: 58px;
+    background-color: #E5FFF0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    border: none;
+    font-size: 16px;
+    padding-left: 20px;
+    display: none;
+}

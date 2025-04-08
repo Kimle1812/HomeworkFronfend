@@ -1,0 +1,244 @@
+<!-- trang chính của dự án -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="body">
+        <!-- HTML trang  Dash Board Layout-->
+        <div class="container">
+            <div class="header">
+                <div class="logo"><a href=""><img src="./assets/images/trello-logo-full.png.png" alt="No Imgage" width="80px" height="17px"></a></div>
+                <div class="icon">
+                    <img src="./assets/icons/Icon (7).png" alt="" width="15px" height="15px">
+                    <img src="./assets/icons/Vector (2).png" alt="" width="15px" height="15px">
+                </div>
+            </div>
+            <div class="main">
+                <div class="main-left">
+                    <div>
+                        <p>YOUR WORKSPACES</p>
+                        <ul >
+                            <li>
+                                <img src="./assets/icons/Icon.png" alt="No Icon">
+                                <b>Boards</b>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/Icon (1).png" alt="No Icon">
+                                <b>Starred Boards</b>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/Icon (2).png" alt="No Icon">
+                                <b>Closed Boards</b>
+                            </li>
+                            <hr>
+                            <li>
+                                <img src="./assets/icons/Icon (3).png" alt="No Icon">
+                                <b>Settings</b>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/Icon (4).png" alt="No Icon">
+                                <a href="/pages/signin.html"><b>Sign out</b></a>
+                            
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-right">
+                    <div class="right-one">
+                        <div class="one-left">
+                            <img src="./assets/icons/Vector (1).png" alt="No Icon" width="32px" height="32px">
+                            <h1>Your Workspaces</h1>
+                        </div>
+                        <div class="one-right">
+                            <button class="button-share">Share</button>
+                            <button class="button-export">Export</button>
+                            <select name="month" id="month">
+                                <option value=""><span><img src="./assets/icons/Icon (6).png" alt=""></span>This week</option>
+                                <option value="1">Tuần 1</option>
+                                <option value="2">Tuần 2</option>
+                                <option value="3">Tuần 3</option>
+                                <option value="4">Tuần 4</option>
+                              </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="right-two">
+                            <ul class="workspaceBoards">
+                                <!-- <li>
+                                    <img src="https://s3-alpha-sig.figma.com/img/0fc2/7b95/e744fce68d6d40202207233815cb2ecf?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jVs6BsDHQ73jT1ldINBSzgPCRgY6y3p4tB50JwcLwieGWV65Ro4PFvSWhuQ-3umwSh-eblTNZ8Y7KGaYhVbrQ-RmAERPoLqjPyRWZjubgzLyNekprLC1NKDkBtuvDMHODOfcJIvM9RvrUG1x1-aiuCCZLlmsHRX74nij2zSLyHqaYI5aSk8mDErKL8WkjnyOyWdqx~24N3ocIDgY7YTfdCPW8UcMJNV7ayqgsw~hrFx4AvKaDL2n5SZ7mAn6u0NhgPmpqf976M4Hg4BXSFNWXsRP-gjZFwq67XdVDNMQjFQv1AvBjGHithrjqBJad7dQ30cKkLVvsKzrdXx8bOfF6w__" alt="No Image" width="270px" height="130px" class="image">
+                                    <div><p class="text-image">Boards Title 01</p></div>
+                                    <button class="edit-button" onclick="showUpdate()">
+                                        <img src="/assets/icons/Frame (5).png" alt="">
+                                        <span>Edit this board</span>
+                                    </button>
+                                </li>-->
+                            </ul>
+                            <div>
+                                <div class="image-button">
+                                    <button onclick="showCreate()">Create new board</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="one-left">
+                            <img src="./assets/icons/Icon (5).png" alt="No Icon">
+                            <h1>Starred Boasds</h1>
+                        </div>
+                        <hr>
+                        <div class="right-two">
+                            <ul class="starredBoards">
+                                <!-- <li>
+                                    <img src="https://animestore.vn/wp-content/uploads/2022/10/hinh-nen-phong-canh-anime-dep_041752715.jpg" alt="" width="270px" height="130px" class="image">
+                                    <div><p class="text-image">Important Board 01</p></div>
+                                </li>
+                                <li>
+                                    <img src="https://animestore.vn/wp-content/uploads/2022/10/hinh-nen-phong-canh-anime-dep_041752715.jpg" alt="" width="270px" height="130px" class="image">
+                                    <div><p class="text-image">Important Board 02</p></div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang CreateBoard -->
+        <div class="createBoard">
+            <div class="createContent">
+                <div class="createHeader">
+                    <h5>Create board</h5>
+                    <img src="/assets/icons/SVG.png" alt="" width="32px" height="32px" onclick="hide()">
+                </div>
+                <hr>
+                <div class="createBackground">
+                    <h5>Background</h5>
+                    <div class="backgroundColor">
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/0caf/31db/519b1e2549c3ed1cdce2d2279cf5ac0b?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GkB3bYxE9QCE8nOxypxPkyEvSqRXYjdVM0-4aAS25bUaYCkT8toTh5rcmzz2Jt3ULinE3tJv~USKY~07a58uE8i2wbrvlE7phDEgBHYZPceDiXZUUguDveAMllbx-i1ZPEMIBgechRc6fpTsa54spaeEe5LC3KbFUz275ymzHdg9601BEVIOyinXCk0gpa8LkcVyt1hCTBnrjsCVPRyqlAzRtp3~rlYRBlvldX3eNVrJNxDRmZvMeiI9U1ofKHkGTRXrrF0obHBr0xdp-uVHiz8s5DWaETfzx-zWViWxrzMiBpNPNpyvDAr06H0eRAJph~aJdnKmnDQrqHhdlsIgAg__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/0fc2/7b95/e744fce68d6d40202207233815cb2ecf?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jVs6BsDHQ73jT1ldINBSzgPCRgY6y3p4tB50JwcLwieGWV65Ro4PFvSWhuQ-3umwSh-eblTNZ8Y7KGaYhVbrQ-RmAERPoLqjPyRWZjubgzLyNekprLC1NKDkBtuvDMHODOfcJIvM9RvrUG1x1-aiuCCZLlmsHRX74nij2zSLyHqaYI5aSk8mDErKL8WkjnyOyWdqx~24N3ocIDgY7YTfdCPW8UcMJNV7ayqgsw~hrFx4AvKaDL2n5SZ7mAn6u0NhgPmpqf976M4Hg4BXSFNWXsRP-gjZFwq67XdVDNMQjFQv1AvBjGHithrjqBJad7dQ30cKkLVvsKzrdXx8bOfF6w__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/d76a/3243/3fab37d082bbd4083db5f9b240c6fcb4?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Yk7L8uPyKjB7xnK4VWoTDF7ZA5Moavp2dCHN9Ya7Zk5lqg1M8C~3Eli~fw3oYUltDvlwh0eAL7jwY9QXCeCBxmA9C8e5fg~0aSguYCkSNlcjX1SHBGqbXUqQf3x493ViM3gbVChyOJjncJSiMF454-0Kxe6fgCJapBmae31oip66i5lMDnU4aHnzlL3hoRC-8H5H87yFqS3Ogt7ac0Bavz2RyjwrSI13RRniCcgfFc67ec8AikTxHyztb-c-RIzwxiluvPc1ndw5h~rjFN11iM7svnkOAJh0b4sxJdG3KeAqNhsDKw2dqwuVEBx6YxFJsmPRAvrsOTFsEikElBUprw__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/9b05/c624/c6e65e6d15486ee67423a56d46f8bdc2?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tf9z52bOlRiVsnakxZRGIBseAk3Ciy4c8lYEgu7uePf7T-WSrXO87VwQ~-naWRhqMXZJTII2Nt7Gba3ktkyZsyHNdw4jPlw3u-8EzGTh~vF5rjLa0fxXU9fHMySx5pgZkeoXv2P6H2RYbEJrSKZCo8m8ho4kNNvuV5U5-2pAk2ca6wI8ZpVpJPTOIHTVCZuwqpT8tvSODy7qyXrb~vtZ4fAcxLIqKQE-K4ts~eKkYRB8Rik9yjvoTRWDqiPgvDgeX1fusBjm0gq4U08ur~PKmXBfe4FfYDFvrIh8SyoFyZHMZyNBVow~ggIXxUbcIcWc43s3JQur8Z1JrxAU~vRkwQ__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr">
+                <h5>Color</h5>
+                <div class="createColor">
+                    <div class="oranger">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="violet">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="green">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="blue">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="yellow">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="pink">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="createTitle">
+                    <h5>Board title <span>*</span></h5>
+                    <input type="text" name="" id="" placeholder="E.g. Shopping list for birthday..." class="createTitle-input">
+                    <b>👋 Please provide a valid board title.</b>
+                </div>
+                <hr>
+                <div class="createButton">
+                    <button class="buttonClose">Close</button>
+                    <button class="buttonCreate" onclick="addNewBoard(users)">Create</button>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang UpdateBoard -->
+        <div class="updateBoard">
+            <div class="updateContent">
+                <div class="updateHeader">
+                    <h5>Update board</h5>
+                    <img src="/assets/icons/SVG.png" alt="" width="32px" height="32px" onclick="hide()">
+                </div>
+                <hr>
+                <div>
+                    <h5>Background</h5>
+                    <div class="backgroundColor">
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/0caf/31db/519b1e2549c3ed1cdce2d2279cf5ac0b?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GkB3bYxE9QCE8nOxypxPkyEvSqRXYjdVM0-4aAS25bUaYCkT8toTh5rcmzz2Jt3ULinE3tJv~USKY~07a58uE8i2wbrvlE7phDEgBHYZPceDiXZUUguDveAMllbx-i1ZPEMIBgechRc6fpTsa54spaeEe5LC3KbFUz275ymzHdg9601BEVIOyinXCk0gpa8LkcVyt1hCTBnrjsCVPRyqlAzRtp3~rlYRBlvldX3eNVrJNxDRmZvMeiI9U1ofKHkGTRXrrF0obHBr0xdp-uVHiz8s5DWaETfzx-zWViWxrzMiBpNPNpyvDAr06H0eRAJph~aJdnKmnDQrqHhdlsIgAg__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/0fc2/7b95/e744fce68d6d40202207233815cb2ecf?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jVs6BsDHQ73jT1ldINBSzgPCRgY6y3p4tB50JwcLwieGWV65Ro4PFvSWhuQ-3umwSh-eblTNZ8Y7KGaYhVbrQ-RmAERPoLqjPyRWZjubgzLyNekprLC1NKDkBtuvDMHODOfcJIvM9RvrUG1x1-aiuCCZLlmsHRX74nij2zSLyHqaYI5aSk8mDErKL8WkjnyOyWdqx~24N3ocIDgY7YTfdCPW8UcMJNV7ayqgsw~hrFx4AvKaDL2n5SZ7mAn6u0NhgPmpqf976M4Hg4BXSFNWXsRP-gjZFwq67XdVDNMQjFQv1AvBjGHithrjqBJad7dQ30cKkLVvsKzrdXx8bOfF6w__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/d76a/3243/3fab37d082bbd4083db5f9b240c6fcb4?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Yk7L8uPyKjB7xnK4VWoTDF7ZA5Moavp2dCHN9Ya7Zk5lqg1M8C~3Eli~fw3oYUltDvlwh0eAL7jwY9QXCeCBxmA9C8e5fg~0aSguYCkSNlcjX1SHBGqbXUqQf3x493ViM3gbVChyOJjncJSiMF454-0Kxe6fgCJapBmae31oip66i5lMDnU4aHnzlL3hoRC-8H5H87yFqS3Ogt7ac0Bavz2RyjwrSI13RRniCcgfFc67ec8AikTxHyztb-c-RIzwxiluvPc1ndw5h~rjFN11iM7svnkOAJh0b4sxJdG3KeAqNhsDKw2dqwuVEBx6YxFJsmPRAvrsOTFsEikElBUprw__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                        <div>
+                            <img src="https://s3-alpha-sig.figma.com/img/9b05/c624/c6e65e6d15486ee67423a56d46f8bdc2?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tf9z52bOlRiVsnakxZRGIBseAk3Ciy4c8lYEgu7uePf7T-WSrXO87VwQ~-naWRhqMXZJTII2Nt7Gba3ktkyZsyHNdw4jPlw3u-8EzGTh~vF5rjLa0fxXU9fHMySx5pgZkeoXv2P6H2RYbEJrSKZCo8m8ho4kNNvuV5U5-2pAk2ca6wI8ZpVpJPTOIHTVCZuwqpT8tvSODy7qyXrb~vtZ4fAcxLIqKQE-K4ts~eKkYRB8Rik9yjvoTRWDqiPgvDgeX1fusBjm0gq4U08ur~PKmXBfe4FfYDFvrIh8SyoFyZHMZyNBVow~ggIXxUbcIcWc43s3JQur8Z1JrxAU~vRkwQ__" alt="" width="108px" height="60px" class="backgroundImage">
+                            <div><img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px" class="backgroundIcon"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr">
+                <h5>Color</h5>
+                <div class="createColor">
+                    <div class="oranger">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="violet">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="green">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="blue">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="yellow">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                    <div class="pink">
+                        <img src="/assets/icons/Icon (8).png" alt="" width="16px" height="16px">
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="createTitle">
+                    <h5>Board title <span>*</span></h5>
+                    <input type="text" class="editTitle-input" id="" placeholder="Board ...">
+                    <b>👋 Please provide a valid board title.</b>
+                </div>
+                <hr>
+                <div class="updateButton">
+                    <button class="buttonClose" onclick="hide()">Close</button>
+                    <button class="buttonSave" onclick="editBoard(users)">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
