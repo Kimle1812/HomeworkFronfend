@@ -17,7 +17,7 @@ function signup() {
         document.getElementsByClassName("invalid")[0].innerHTML = "Mật khẩu phải có ít nhất 8 kí tự";
         return;
     }
-    let users= JSON.parse(localStorage.getItem("user")) || [];
+    let users= JSON.parse(localStorage.getItem("users")) || [];
     let findUser = users.find((item) => item.email == email);
     if(findUser){
         document.getElementsByClassName("error")[0].style.display = "block";

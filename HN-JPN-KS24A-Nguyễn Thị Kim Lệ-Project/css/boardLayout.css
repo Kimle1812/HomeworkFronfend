@@ -834,7 +834,7 @@ body{
     display: none;
     z-index: 999;
 }
-/* CSS trang Close Boards */
+/* CSS trang Delete Boards */
 .deleteBoard{
     display: flex;
     justify-content: center;

@@ -73,7 +73,7 @@
                     <hr>
                     <div>
                         <div class="right-two">
-                            <ul class="workspaceBoards">
+                            <ul id="workspaceBoards" class="workspaceBoards">
                                 <!-- <li>
                                     <img src="https://s3-alpha-sig.figma.com/img/0fc2/7b95/e744fce68d6d40202207233815cb2ecf?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jVs6BsDHQ73jT1ldINBSzgPCRgY6y3p4tB50JwcLwieGWV65Ro4PFvSWhuQ-3umwSh-eblTNZ8Y7KGaYhVbrQ-RmAERPoLqjPyRWZjubgzLyNekprLC1NKDkBtuvDMHODOfcJIvM9RvrUG1x1-aiuCCZLlmsHRX74nij2zSLyHqaYI5aSk8mDErKL8WkjnyOyWdqx~24N3ocIDgY7YTfdCPW8UcMJNV7ayqgsw~hrFx4AvKaDL2n5SZ7mAn6u0NhgPmpqf976M4Hg4BXSFNWXsRP-gjZFwq67XdVDNMQjFQv1AvBjGHithrjqBJad7dQ30cKkLVvsKzrdXx8bOfF6w__" alt="No Image" width="270px" height="130px" class="image">
                                     <div><p class="text-image">Boards Title 01</p></div>
@@ -170,7 +170,7 @@
                 <hr>
                 <div class="createButton">
                     <button class="buttonClose">Close</button>
-                    <button class="buttonCreate" onclick="addNewBoard(users)">Create</button>
+                    <button class="buttonCreate" onclick="addNewBoard(users, currentUser)">Create</button>
                 </div>
             </div>
         </div>
@@ -228,13 +228,25 @@
                 <hr class="hr">
                 <div class="createTitle">
                     <h5>Board title <span>*</span></h5>
-                    <input type="text" class="editTitle-input" id="" placeholder="Board ...">
+                    <input name="editTitle-input" type="text" class="editTitle-input" id="editTitle-input" placeholder="Board ...">
                     <b>👋 Please provide a valid board title.</b>
                 </div>
                 <hr>
                 <div class="updateButton">
                     <button class="buttonClose" onclick="hide()">Close</button>
-                    <button class="buttonSave" onclick="editBoard(users)">Save</button>
+                    <button class="buttonSave" onclick="hide()">Save</button>
+                </div>
+            </div>
+        </div>
+        <!-- HTML trang Delete Board -->
+        <div class="deleteBoard">
+            <div class="contentDelete">
+                <div><img src="/assets/icons/Border.png" alt=""></div>
+                <h2>Are you sure?</h2>
+                <p>You won't be able to revert this!</p>
+                <div class="button">
+                    <button class="button-yes" onclick="save()">Yes, delete it!</button>
+                    <button class="button-cancel" onclick="hide()">Cancel</button>
                 </div>
             </div>
         </div>

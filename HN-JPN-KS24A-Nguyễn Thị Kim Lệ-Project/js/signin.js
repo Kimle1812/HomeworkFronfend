@@ -7,8 +7,8 @@ function signin() {
     }
     let users= JSON.parse(localStorage.getItem("users")) || [];
     let currentUser = users.find((e)=> e.email == email);
-    // localStorage.setItem("account", JSON.stringify(currentUser));
     if(currentUser){
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
         document.getElementsByClassName("success")[0].style.display = "flex";
         window.location.href = "http://127.0.0.1:5500/dashboardLayout.html";
     }else{

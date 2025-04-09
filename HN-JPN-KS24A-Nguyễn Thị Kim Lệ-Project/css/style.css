@@ -47,6 +47,7 @@ body{
 }
 .main-left li{
     padding: 11px;
+    font-weight: 600;
 }
 .main-left b{
     padding: 12px;
@@ -417,6 +418,72 @@ body{
 }
 .updateBoard{
     display: none;
+}
+/* CSS trang Delete Boards */
+.deleteBoard{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    position: absolute;
+    top: 0px;
+    left: 35%;
+}
+.contentDelete{
+    width: 512px;
+    height: 342px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 65px;
+    border: 1px solid rgb(208, 208, 208);
+    background-color: white;
+}
+.content div{
+    display: flex;
+    justify-content: center;
+}
+.contentDelete img{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin-top: 44px;
+}
+.contentDelete h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentDelete p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #545454;
+    margin-bottom: -20px;
+}
+.contentDelete .button .button-yes{
+    width: 140px;
+    border: none;
+    height: 40px;
+    background-color: #3085D6;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.contentDelete .button .button-cancel{
+    width: 90px;
+    border: none;
+    height: 40px;
+    background-color: #DD3333;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.deleteBoard{
+    display: none;
+    z-index: 999;
+}
+/* CSS chuyen doi giữa các giao diện */
+.body{
+    position: relative;
 }
 /* CSS chuyen doi giữa các giao diện */
 .body{

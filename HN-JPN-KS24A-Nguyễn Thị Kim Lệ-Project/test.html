@@ -1,133 +1,378 @@
-
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách sản phẩm</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            padding-top: 20px;
-        }
-
-        #product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .card {
-            flex: 0 0 calc(16.666% - 10px);
-            width: 100%;
-            height: 450px;
-        }
-
-        .card img {
-            height: 160px;
-            width: 160px;
-            position: relative;
-            left: 20px;
-            top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .card-body {
-            height: 200px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giao diện Trello-like</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/DashBoard.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="input-group">
-            <input type="text" id="search" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-            <button class="btn btn-success" id="search-btn">Search</button>
+    <div class="header">
+        <div class="logo">
+            <img id="logo" src="../assets/imgs/fonts/icons/trello-logo-full.png.png" alt="Logo" />
         </div>
-        <div id="product-list" class="d-flex"></div>
+        <div class="sreach">
+            <img src="../assets/imgs/fonts/icons/timKiem.png" alt="Search">
+            <img id="funcIcon" src="../assets/imgs/fonts/icons/func.png" alt="Function Icon">
+        </div>
     </div>
-   <script>
-    let products = [
-    {
-        id: 1,
-        name: 'Laptop Dell XPS 15',
-        price: 35990000,
-        image: 'https://laptopaz.vn/media/product/2484_laptopaz_dell_xps_9520_2.jpg',
-        description: 'Laptop cao cấp với màn hình 15 inch, CPU Intel Core i7 và RAM 16GB.'
-    },
-    {
-        id: 2,
-        name: 'iPhone 15 Pro Max',
-        price: 29990000,
-        image: 'https://lh3.googleusercontent.com/w4fEZWQ_oMeAhcimSSdv62UCddwGAiBxFvCX1prTaqn2S20wwdfpfHMIvV2DYTuVxVBM2BOy1yGT9IhPtNmv1M7KO5r9z0USNhPWAnc_xP3a4enNrzWdIxmmnf_pjkUUgzqHO5ELAEXwFDqPv-L5NJw',
-        description: 'Điện thoại Flagship của Apple với camera 48MP và chip A17 Pro.'
-    },
-    {
-        id: 3,
-        name: 'Samsung Galaxy S24 Ultra',
-        price: 28990000,
-        image: 'https://cdn.xtmobile.vn/vnt_upload/news/05_2024/15/ly-do-nen-mua-galaxy-s24-ultra-cu-xtmobile.jpg',
-        description: 'Điện thoại Android mạnh mẽ với bút S-Pen và camera siêu zoom.'
-    },
-    {
-        id: 4,
-        name: 'Tai nghe Sony WH-1000XM5',
-        price: 7990000,
-        image: 'https://antuan.vn/public/uploads/anh-san-pham/sony/tai-nghe-sony-wh-1000xm5/tai-nghe-sony-wh-1000mx5-white-4.jpg',
-        description: 'Tai nghe chống ồn chất lượng cao với thời gian pin 30 giờ.'
-    },
-    {
-        id: 5,
-        name: 'Apple Watch Series 9',
-        price: 11990000,
-        image: 'https://www.apple.com/newsroom/images/2023/09/apple-introduces-the-advanced-new-apple-watch-series-9/tile/Apple-Watch-S9-hero-230912.jpg.og.jpg?202503102216',
-        description: 'Đồng hồ thông minh cao cấp với màn hình Always-on và hỗ trợ thể thao.'
-    },
-    {
-        id: 6,
-        name: 'Loa JBL Charge 5',
-        price: 3600000,
-        image: 'https://hoanghamobile.com/Uploads/2021/03/09/image-removebg-preview-6.png',
-        description: 'Loa Bluetooth chống nước với âm bass mạnh mẽ và pin 20 giờ.'
-    }
-];
-function renderProducts(filteredProducts) {
-    let productList = document.getElementById('product-list');
-    productList.innerHTML = '';
-    filteredProducts.forEach(product => {
-        productList.innerHTML += `
-        <div class="card">
-            <img src="${product.image}" class="card-img-top" alt="${product.name}">
-            <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.description}</p>
-                <p>${product.price.toLocaleString()} VND</p>
-                <button class="btn btn-primary">Buy</button>
+
+
+    <div id="mobile-menu">
+        <div class="menu-item">Boards</div>
+        <div class="menu-item">Starred Boards</div>
+        <div class="menu-item">Closed Boards</div>
+        <hr>
+        <div class="menu-item">Settings</div>
+        <div class="menu-item">Sign out</div>
+    </div>
+
+    <section>
+        <div class="container">
+            <span id="workSpaces">YOUR WORkSPACES</span>
+            <div class="items">
+                <img class="icon" src="../assets/imgs/fonts/icons/Vector.png" alt="Boards">
+                <span class="textIcon">Boards</span>
+            </div>
+            <div class="items">
+                <img class="icon" src="../assets/imgs/fonts/icons/ngoiSao.png" alt="Starred Boards">
+                <span class="textIcon">Starred Boards</span>
+            </div>
+            <div class="items">
+                <img class="icon" src="../assets/imgs/fonts/icons/closedBoards.png" alt="Closed Boards">
+                <span class="textIcon">Closed Boards</span>
+            </div>
+            <hr>
+            <div class="items">
+                <img class="icon" src="../assets/imgs/fonts/icons/settings.png" alt="Settings">
+                <span class="textIcon">Settings</span>
+            </div>
+            <div class="items">
+                <img class="icon" src="../assets/imgs/fonts/icons/signOut.png" alt="Sign out">
+                <span class="textIcon">Sign out</span>
             </div>
         </div>
-    `;
+
+        <div class="main">
+            <div class="headerMain">
+                <div>
+                    <img id="boards_icon" src="../assets/imgs/fonts/icons/boardsBlue.png" alt="Boards Icon">
+                    <span id="workspacess">Your Workspaces</span>
+                </div>
+                <div>
+                    <button id="share">share</button>
+                    <button id="Export">Export</button>
+                    <select name="time" id="time">
+                        <option value="">Next Day</option>
+                        <option value="">This week</option>
+                        <option value="">Next week</option>
+                        <option value="">Next month</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bodymain">
+                <div class="board">
+                    <div class="creatNewBoard">
+                        <div class="buttonCreat">Creat new board</div>
+                    </div>
+
+                </div>
+                <div class="windowNewBoard">
+                    <div class="windowCreatHeader">
+                        <span class="windowCreatHeaderSpan">Create board</span>
+                        <img src="../assets/imgs/fonts/icons/Button - Close.png" alt="Close">
+                    </div>
+
+                    <span id="backGroundWindowSpan">Background</span>
+                    <div class="itemsWindowBackGround">
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back1.png" alt="Background 1"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back2.png" alt="Background 2"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back3.png" alt="Background 3"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back4.png" alt="Background 4"></div>
+                    </div>
+
+                    <hr>
+
+                    <div class="colorWindow">
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color1.png" alt="Color 1">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color2.png" alt="Color 2">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color3.png" alt="Color 3">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color4.png" alt="Color 4">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color5.png" alt="Color 5">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color6.png" alt="Color 6">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="windowFooter">
+                        <span id="board_title">Board title</span>
+                        <div>
+
+                            <input type="text" id="text_board_title" placeholder="E.g. Abcxyz..." />
+                            <span>👋 Please provide a valid board title</span>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+                    <div class="buttonFooter">
+                        <button id="close">Close</button>
+                        <button id="create">Create</button>
+                    </div>
+                </div>
+
+
+
+
+                <div class="windowUpdateBoard">
+                    <div class="windowUpdateHeader">
+                        <span class="windowUpdateHeaderSpan">Update board</span>
+                        <img src="../assets/imgs/fonts/icons/Button - Close.png" alt="Close">
+                    </div>
+
+                    <span id="backGroundWindowSpan">Background</span>
+                    <div class="itemsWindowBackGround">
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back1.png" alt="Background 1"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back2.png" alt="Background 2"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back3.png" alt="Background 3"></div>
+                        <div class="backGound"><img src="../assets/imgs/fonts/icons/back4.png" alt="Background 4"></div>
+                    </div>
+
+                    <hr>
+
+                    <div class="colorWindow">
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color1.png" alt="Color 1">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color2.png" alt="Color 2">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color3.png" alt="Color 3">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color4.png" alt="Color 4">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color5.png" alt="Color 5">
+                        </div>
+                        <div class="colorBackGround"><img src="../assets/imgs/fonts/icons/color6.png" alt="Color 6">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="windowFooter">
+                        <span id="board_title_update">Board title</span>
+                        <div>
+                            <!-- Sử dụng input để nhập tiêu đề board -->
+                            <input type="text" id="text_board_title_update" placeholder="E.g. Abcxyz..." />
+                            <span>👋 Please provide a valid board title</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="buttonFooter">
+                        <button id="close_update">Close</button>
+                        <button id="update">Update</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footerMain">
+                <div class="textFooterMain">
+                    <img src="../assets/imgs/fonts/icons/ngoisaoDen.png" alt="Starred Icon">
+                    <span>Starred Boards</span>
+                </div>
+                <div class="itemsFooter">
+                    <div class="itemsImportantBoards">
+                        <span>Important Board 01</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var funcIcon = document.getElementById('funcIcon');
+            var mobileMenu = document.getElementById('mobile-menu');
+            funcIcon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+            });
+            document.addEventListener('click', function (e) {
+                if (e.target !== mobileMenu && !mobileMenu.contains(e.target) && e.target !== funcIcon) {
+                    mobileMenu.style.display = 'none';
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+
+const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+
+const creatNewBoardBtn = document.querySelector('.creatNewBoard');
+const windowNewBoard = document.querySelector('.windowNewBoard');
+const windowUpdateBoard = document.querySelector('.windowUpdateBoard');
+const closeBtns = document.querySelectorAll('[id^="close"]');
+const createBtn = document.querySelector('#create');
+const updateBtn = document.querySelector('#update');
+const boardTitleInput = document.querySelector('#text_board_title');
+const boardTitleUpdateInput = document.querySelector('#text_board_title_update');
+const boardsContainer = document.querySelector('.bodymain .board');
+
+
+let boards = currentUser.boards || [];
+
+
+const funcIcon = document.getElementById('funcIcon');
+const mobileMenu = document.getElementById('mobile-menu');
+
+funcIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', function (e) {
+    if (!mobileMenu.contains(e.target) && e.target !== funcIcon) {
+        mobileMenu.style.display = 'none';
+    }
+});
+
+
+creatNewBoardBtn.addEventListener('click', function () {
+    windowNewBoard.style.display = 'block';
+});
+
+
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        windowNewBoard.style.display = 'none';
+        windowUpdateBoard.style.display = 'none';
     });
-}
-function searchProducts() {
-    let searchText = document.getElementById('search').value.toLowerCase();
-    let filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchText) ||
-        product.description.toLowerCase().includes(searchText)
+});
+
+
+createBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    const title = boardTitleInput.value.trim();
+
+    if (!title) {
+        alert('Vui lòng nhập tên board');
+        return;
+    }
+
+    const newBoard = {
+        id: Date.now().toString(),
+        title: title,
+        description: "",
+        backdrop: "https://example.com/default.jpg",
+        is_starred: false,
+        created_at: new Date().toISOString(),
+        lists: []
+    };
+
+
+    boards.push(newBoard);
+    currentUser.boards = boards;
+
+
+    const updatedUsers = users.map(user =>
+        user.id === currentUser.id ? currentUser : user
     );
-    renderProducts(filteredProducts);
+
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+
+    renderBoard(newBoard);
+    windowNewBoard.style.display = 'none';
+    boardTitleInput.value = '';
+});
+
+
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('edit-board')) {
+        const boardId = e.target.closest('.board-item').dataset.boardId;
+        const board = boards.find(b => b.id === boardId);
+        openUpdateModal(board);
+    }
+});
+
+
+function openUpdateModal(board) {
+    boardTitleUpdateInput.value = board.title;
+    windowUpdateBoard.style.display = 'block';
+    windowUpdateBoard.dataset.boardId = board.id;
 }
-document.getElementById('search-btn').addEventListener('click', searchProducts);
-renderProducts(products);
-   </script>
+
+
+updateBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    const boardId = windowUpdateBoard.dataset.boardId;
+    const newTitle = boardTitleUpdateInput.value.trim();
+
+    if (!newTitle) {
+        alert('Vui lòng nhập tên mới');
+        return;
+    }
+
+
+    const updatedBoards = boards.map(board =>
+        board.id === boardId ? { ...board, title: newTitle } : board
+    );
+
+    currentUser.boards = updatedBoards;
+    const updatedUsers = users.map(user =>
+        user.id === currentUser.id ? currentUser : user
+    ); 
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    boardsContainer.innerHTML = '';
+    loadBoards();
+    windowUpdateBoard.style.display = 'none';
+});
+function renderBoard(board) {
+    const boardElement = document.createElement('div');
+    boardElement.className = 'board-item';
+    boardElement.dataset.boardId = board.id;
+    boardElement.innerHTML = `
+        <span>${board.title}</span>
+        <button class="edit-board">Edit board</button>
+    `;
+
+    boardElement.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('edit-board')) {
+            window.location.href = `boardLayout.html?boardId=${board.id}`;
+        }
+    });
+
+    boardsContainer.appendChild(boardElement);
+}
+function loadBoards() {
+    boards.forEach(board => renderBoard(board));
+}
+loadBoards();
+window.addEventListener('click', function (e) {
+    if (e.target === windowNewBoard) {
+        windowNewBoard.style.display = 'none';
+    }
+    if (e.target === windowUpdateBoard) {
+        windowUpdateBoard.style.display = 'none';
+    }
+});
+});
+    </script>
 </body>
 
 </html>
