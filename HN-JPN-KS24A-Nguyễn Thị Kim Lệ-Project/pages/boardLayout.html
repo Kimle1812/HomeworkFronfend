@@ -37,7 +37,15 @@
                             <li class="your-boards">
                                 <b>Your boards</b>
                                 <img src="/assets/icons/Frame.png" alt="" width="16px" height="16px">
+                                
                             </li>
+                            <ul id="list-board">
+                                <li>
+                                    <img src="/assets/icons/Frame (4).png" alt="">
+                                    <span>Year-end party</span>
+                                    <img src="/assets/icons/Frame (5).png" alt="" width="16px" height="16px">
+                                </li>
+                            </ul>
                             <li>
                             </li>
                         </ul>
@@ -47,7 +55,7 @@
                     <div class="right-top">
                         <div class="content-one">
                             
-                            <h3>Tổ chức sự kiện Year-end party !</h3>
+                            <h3 class="nameList"></h3>
                             <img src="/assets/icons/Icon (5).png" alt="" width="16px" height="16px" class="header-image">
                             <button class="button-board">
                                 <img src="/assets/icons/Frame (1).png" alt="">
@@ -67,69 +75,72 @@
                             <span onclick="showFilter()">Filter</span>
                         </button>
                     </div>
-                    <div class="right-bottom">
-                        <div class="content-one">
-                            <div class="header">
-                                <span>Todo</span>
-                                <div class="header-icon">
-                                    <img src="/assets/icons/Button.png" alt="" width="32px" height="32px">
-                                    <img src="/assets/icons/Button menu.png" alt="" width="32px" height="32px">
-                                </div>
-                            </div>
-                            <div class="center">
-                                <ul>
-                                    <li><img src="/assets/icons/Img - Complete.png" alt="">Thuê DJ</li>
-                                    <li>Lên kịch bản chương trình</li>
-                                    <li>Chuẩn bị kịch</li>
-                                    <li onclick="showScript()">Kịch bản</li>
-                                    <li>Thuê MC</li>
-                                </ul>
-                                <div class="addCard">
-                                    <input type="text" placeholder="Enter a title or paste a link"><br>
-                                    <div class="button-addCard">
-                                        <button>Add card</button>
-                                        <img src="/assets/icons/SVG.png" alt="" width="24px" height="24px" onclick="hideAddCard()">
+                    <div class="right-middle">
+                        <div class="right-bottom" id="right-bottom">
+                            <!-- <div class="content-one" > -->
+                                <!-- <div class="header">
+                                    <span>Todo</span>
+                                    <div class="header-icon">
+                                        <img src="/assets/icons/Button.png" alt="" width="32px" height="32px">
+                                        <img src="/assets/icons/Button menu.png" alt="" width="32px" height="32px">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="final">
-                                <div>
-                                    <img src="/assets/icons/Frame.png" alt="">
-                                    <span onclick="showAddCard()">Add a card</span>
+                                <div class="center">
+                                    <ul>
+                                        <li><img src="/assets/icons/Img - Complete.png" alt="">Thuê DJ</li>
+                                        <li>Lên kịch bản chương trình</li>
+                                        <li>Chuẩn bị kịch</li>
+                                        <li onclick="showScript()">Kịch bản</li>
+                                        <li>Thuê MC</li>
+                                    </ul>
+                                    <div class="addCard">
+                                        <input type="text" placeholder="Enter a title or paste a link" class="addTask-input"><br>
+                                        <div class="button-addCard">
+                                            <button>Add card</button>
+                                            <img src="/assets/icons/SVG.png" alt="" width="24px" height="24px" onclick="hideAddCard()">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="final">
+                                    <div>
+                                        <img src="/assets/icons/Frame.png" alt="">
+                                        <span onclick="showAddCard()">Add a card</span>
+                                    </div>
+                                    <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
+                                </div> -->
+                            <!-- </div> -->
+                            <!-- <div class="content-two">
+                                <div class="header">
+                                    <span>In-progress</span>
+                                    <div class="header-icon">
+                                        <img src="/assets/icons/Button.png" alt="">
+                                        <img src="/assets/icons/Button menu.png" alt="">
+                                    </div>
                                 </div>
-                                <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
-                            </div>
+                                <div class="final">
+                                    <div>
+                                        <img src="/assets/icons/Frame.png" alt="">
+                                        <span >Add a card</span>
+                                    </div>
+                                    <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
+                                </div>
+                            </div> -->
+                        
                         </div>
-                        <div class="content-two">
-                            <div class="header">
-                                <span>In-progress</span>
-                                <div class="header-icon">
-                                    <img src="/assets/icons/Button.png" alt="">
-                                    <img src="/assets/icons/Button menu.png" alt="">
-                                </div>
-                            </div>
-                            <div class="final">
-                                <div>
-                                    <img src="/assets/icons/Frame.png" alt="">
-                                    <span >Add a card</span>
-                                </div>
-                                <img src="/assets/icons/Frame (3).png" alt="" onclick="showDelete()">
-                            </div>
-                        </div>
-                        <div class="content-three">
-                            <div class="final">
+                        <div class="content-addList">
+                            <div class="final" id="final">
                                 <img src="/assets/icons/Frame.png" alt="">
                                 <span onclick="showAddList()">Add another list</span>
                             </div>
-                            <div class="addList">
-                                <input type="text" placeholder="Enter a title or paste a link"><br>
-                                <div class="button-addList">
-                                    <button>Add list</button>
+                            <div class="addList" id="addList">
+                                <input type="text" class="addList-input" placeholder="Enter a title or paste a link"><br>
+                                <div class="button-addList" id="addList">
+                                    <button onclick="addList(users)">Add list</button>
                                     <img src="/assets/icons/SVG.png" alt="" width="24px" height="24px" onclick="hideAddCard()">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div >
                 </div>
             </div>
         </div>
@@ -197,8 +208,8 @@
             <div class="detailModal-main">
                 <div class="detailHeader">
                     <div class="detailHeader-top">
-                        <img src="/assets/icons/Img - Incomplete.png" alt="" width="16px" height="16px">
-                        <b>Kịch bản</b>
+                        <img src="/assets/icons/Img - Incomplete.png" alt="" width="20px" height="20px">
+                        <input type="text" class="detailHeader-input">
                     </div>
                     <div class="detailHeader-bottom">
                         <span>in list</span>
@@ -215,7 +226,7 @@
                             <b>Description</b>
                         </div>
                         <div class="detailContent-input">
-                            <input type="text">
+                            <input type="text" id="detailContent-input">
                             <div class="detailContent-img">
                                 <img src="/assets/icons/Button menu - normal Text styles.png" alt="" width="44px" height="24px"><hr>
                                 <img src="/assets/icons/Frame (8).png" alt="" width="24px" height="24px">
@@ -234,7 +245,7 @@
                             <hr class="hr">
                         </div>
                         <div>
-                            <button class="button-save">Save</button>
+                            <button class="button-save" onclick="editTask(users)">Save</button>
                             <button class="button-cancel" onclick="hide()">Cancel</button>
                         </div>
                     </div>
@@ -391,14 +402,26 @@
                     <button class="button-remove">Remove</button>
                 </div>
             </div>
-            <!-- HTML trang Delete Board -->
-            <div class="deleteBoard">
+            <!-- HTML trang Delete Task -->
+            <div class="deleteTask">
                 <div class="contentDelete">
                     <div><img src="/assets/icons/Border.png" alt=""></div>
                     <h2>Are you sure?</h2>
                     <p>You won't be able to revert this!</p>
                     <div class="button">
-                        <button class="button-yes">Yes, delete it!</button>
+                        <button class="button-yes" onclick="deleteTask(users)">Yes, delete it!</button>
+                        <button class="button-cancel" onclick="hideDetailModal()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML trang Delete List -->
+            <div class="deleteList">
+                <div class="contentDelete">
+                    <div><img src="/assets/icons/Border.png" alt=""></div>
+                    <h2>Are you sure?</h2>
+                    <p>You won't be able to revert this!</p>
+                    <div class="button">
+                        <button class="button-yes" onclick="deleteList(users)">Yes, delete it!</button>
                         <button class="button-cancel" onclick="hideDetailModal()">Cancel</button>
                     </div>
                 </div>

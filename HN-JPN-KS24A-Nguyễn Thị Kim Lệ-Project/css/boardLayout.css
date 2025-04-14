@@ -29,20 +29,32 @@ body{
 }
 .main-left li{
     padding: 11px;
-    /* line-height: 21px; */
 }
 .main-left b{
-    padding: 12px;
+    padding: 0px 12px;
     color: #0D6EFD;
     font-size: 14px;
 }
 .main-left .your-boards{
     display: flex;
     justify-content: space-between;
-    margin: 5px 13px;
+    margin: 5px;
 }
 .main-left .your-boards b{
     color: #172B4D;
+}
+#list-board li{
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+}
+#list-board li span{
+    font-weight: 500;
+    color: #172B4D;
+    margin-top: 5px;
+}
+.addBackgroundBoard{
+    background-color: #9e9d9d;
 }
 /* CSS phan main right-top */
 .main-right{
@@ -120,18 +132,24 @@ body{
     gap: 5px;
 }
 /* CSS phan main right-bottom */
+.right-middle{
+    display: flex;
+    flex-wrap: wrap;
+}
 .right-bottom{
     background-color: white;
     margin-left: 20px;
     margin-top: 30px;
     display: flex;
     gap: 20px;
+    height:auto;
 }
 .right-bottom .content-one{
     background-color: #F1F2F4;
     width: 272px;
     border-radius: 10px;
     padding: 0px 10px;
+    padding-bottom: 10px;
 }
 .right-bottom .content-one .header{
     display: flex;
@@ -145,19 +163,51 @@ body{
     margin-top: 5px;
     gap: 10px;
 }
-.right-bottom .content-one .center ul{
+.right-bottom .content-one ul{
     line-height: 30px;
 }
-.right-bottom .content-one .center ul li{
+.right-bottom .content-one ul li{
     background-color: white;
     margin-top: 5px;
     border-radius: 10px;
     padding: 5px 10px ;
 }
-.right-bottom .content-one .center ul li img{
+.right-bottom .content-one ul li div{
+    display: flex;
+    gap: 20px;
+}
+.right-bottom .content-one ul li .button-edit{
+    background-color: #44546F;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.right-bottom .content-one ul li .button-delete{
+    background-color: #DD3333;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.right-bottom .content-one ul li img{
     margin-right: 5px;
 }
-.right-bottom .content-one .center .addCard input{
+.list-item{
+    display: flex;
+    flex-direction: column;
+}
+.right-bottom .addCard{
+    background-color: #F1F2F4;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-top: 10px;
+    width: 272px;
+    border-radius: 10px;
+}
+.right-bottom .addCard input{
     width: 254px;
     height: 56px;
     border-radius: 8px;
@@ -166,17 +216,17 @@ body{
     border: none;
     margin-top: 5px;
 }
-.right-bottom .content-one .center .addCard input::placeholder{
+.right-bottom .addCard input::placeholder{
     color: #626F86;
     padding-bottom: 5px;
 
 }
-.right-bottom .content-one .center .addCard .button-addCard{
+.right-bottom .addCard .button-addCard{
     display: flex;
     gap: 20px;
     margin: 10px 0px;
 }
-.right-bottom .content-one .center .addCard .button-addCard button{
+.right-bottom .addCard .button-addCard button{
     width: 84px;
     height: 32px;
     border-radius: 3px;
@@ -185,10 +235,52 @@ body{
     color: white;
     font-size: 16px;
 }
-.right-bottom .content-one .center .addCard .button-addCard img{
+.right-bottom .addCard .button-addCard img{
     margin-top: 5px;
 }
-.right-bottom .content-one .center .addCard{
+.right-bottom .addCard{
+    display: none;
+}
+.right-bottom .editList{
+    background-color: #F1F2F4;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-top: 10px;
+    width: 272px;
+    border-radius: 10px;
+}
+.right-bottom .editList input{
+    width: 254px;
+    height: 56px;
+    border-radius: 8px;
+    padding-left: 12px;
+    font-size: 16px;
+    border: none;
+    margin-top: 5px;
+}
+.right-bottom .editList input::placeholder{
+    color: #626F86;
+    padding-bottom: 5px;
+
+}
+.right-bottom .editList .button-editList{
+    display: flex;
+    gap: 20px;
+    margin: 10px 0px;
+}
+.right-bottom .editList .button-editList button{
+    width: 84px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    background-color: #0C66E4;
+    color: white;
+    font-size: 16px;
+}
+.right-bottom .editList .button-editList img{
+    margin-top: 5px;
+}
+.right-bottom .editList{
     display: none;
 }
 .right-bottom .content-one .final{
@@ -221,14 +313,18 @@ body{
     margin-top: 10px;
     padding-left: 10px;
 }
-.right-bottom .content-three .final{
+.content-addList{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.content-addList .final{
     padding-left: 10px;
-    background-color: #F1F2F4;
+    background-color: #edeef0;
     width: 272px;
     border-radius: 10px;
     padding: 11px 10px;
 }
-.right-bottom .content-three .addList input{
+.content-addList .addList input{
     width: 254px;
     height: 56px;
     border-radius: 8px;
@@ -237,17 +333,17 @@ body{
     border: none;
     margin-top: 5px;
 }
-.right-bottom .content-three .addList input::placeholder{
+.content-addList .addList input::placeholder{
     color: #626F86;
     padding-bottom: 5px;
 
 }
-.right-bottom .content-three .addList .button-addList{
+.content-addList .addList .button-addList{
     display: flex;
     gap: 20px;
     margin: 10px 0px;
 }
-.right-bottom .content-three .addList .button-addList button{
+.content-addList .addList .button-addList button{
     width: 84px;
     height: 32px;
     border-radius: 3px;
@@ -256,10 +352,10 @@ body{
     color: white;
     font-size: 16px;
 }
-.right-bottom .content-three .addList .button-addList img{
+.content-addList .addList .button-addList img{
     margin-top: 5px;
 }
-.right-bottom .content-three .addList{
+.content-addList .addList{
     padding-left: 10px;
     background-color: #F1F2F4;
     width: 272px;
@@ -440,12 +536,18 @@ body{
     display: flex;
     gap: 6px;
 }
-.detailHeader .detailHeader-top b{
-    font-weight: 700;
-    font-size: 20px;
-    color: #172B4D;
-    margin-left: 10px;
+.detailHeader .detailHeader-top img{
+    margin-top: 5px;
+    border-radius: 50%;
 }
+.detailHeader .detailHeader-top input{
+    color: #172B4D;
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 10px;
+    border: none;
+}
+
 .detailHeader .detailHeader-bottom{
     margin: 15px 35px;
     display: flex;
@@ -835,7 +937,7 @@ body{
     z-index: 999;
 }
 /* CSS trang Delete Boards */
-.deleteBoard{
+.deleteTask{
     display: flex;
     justify-content: center;
     margin-top: 200px;
@@ -892,7 +994,20 @@ body{
     font-size: 16px;
     border-radius: 4px;
 }
-.deleteBoard{
+.deleteTask{
+    display: none;
+    z-index: 999;
+}
+/* CSS trang Delete Boards */
+.deleteList{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    position: absolute;
+    top: 0px;
+    left: 35%;
+}
+.deleteList{
     display: none;
     z-index: 999;
 }

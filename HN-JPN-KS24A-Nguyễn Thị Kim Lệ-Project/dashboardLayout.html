@@ -228,13 +228,13 @@
                 <hr class="hr">
                 <div class="createTitle">
                     <h5>Board title <span>*</span></h5>
-                    <input name="editTitle-input" type="text" class="editTitle-input" id="editTitle-input" placeholder="Board ...">
+                    <input value="" type="text" class="editTitle-input" id="editTitle-input">
                     <b>👋 Please provide a valid board title.</b>
                 </div>
                 <hr>
                 <div class="updateButton">
                     <button class="buttonClose" onclick="hide()">Close</button>
-                    <button class="buttonSave" onclick="hide()">Save</button>
+                    <button class="buttonSave" onclick="editBoard(users)">Save</button>
                 </div>
             </div>
         </div>
@@ -245,7 +245,7 @@
                 <h2>Are you sure?</h2>
                 <p>You won't be able to revert this!</p>
                 <div class="button">
-                    <button class="button-yes" onclick="save()">Yes, delete it!</button>
+                    <button class="button-yes" onclick="deleteBoard(users)">Yes, delete it!</button>
                     <button class="button-cancel" onclick="hide()">Cancel</button>
                 </div>
             </div>

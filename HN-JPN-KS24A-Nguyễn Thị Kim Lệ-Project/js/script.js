@@ -62,14 +62,14 @@
                     let board = user.boards[boardIndex];
                     boardList.innerHTML += `
                         <li>
-                            <img src="${board.backdrop}" alt="No Image" width="270px" height="130px" class="image">
+                            <div onclick="showBoardLayout(id)" id=${board.id}><img src="${board.backdrop}" alt="No Image" width="270px" height="130px" class="image"></div>
                             <div><p class="text-image">${board.title}</p></div>
                             <div class="button">
-                                <button id=${board.id} class="edit-button">
+                                <button id=${board.id} class="edit-button" onclick="showUpdate(id)">
                                     <img src="/assets/icons/Frame (5).png" alt="">
                                     <span>Edit this board</span>
                                 </button>
-                                <button id=${board.id} class="delete-button">Delete</button>
+                                <button id=${board.id} class="delete-button" onclick="showDelete(id)">Delete</button>
                             </div>
                         </li>
                     `;
@@ -127,71 +127,77 @@ function addNewBoard(users, currentUser){
     hide();
 }
 //Hàm sửa Board
-// function editBoard(users) {
-//     let boardTitle = document.getElementsByClassName("text-image")[0];
-//     console.log(boardTitle);
+function editBoard(users) {
+    let boardTitle = document.getElementsByClassName("text-image")[0];
+    console.log(boardTitle);
     
-//     // Lấy dữ liệu mới từ các trường nhập liệu
-//     let newTitle = document.getElementsByClassName("editTitle-input")[0].value.trim();
-//     if (!newTitle) {
-//         alert("Vui lòng nhập đầy đủ thông tin để sửa!");
-//         return;
-//     }
-
-//     // Cập nhật thông tin Board
-//     users.boards.title = newTitle;
-
-//     // Lưu lại vào Local Storage
-//     localStorage.setItem("users", JSON.stringify());
-
-//     displayWorkspaceBoards(users);
-//     displayStarredBoards(users);
-
-//     alert("Sửa Board thành công!");
-//     hide();
-// }
-// // workspaceBoards
-let workspaceBoards = document.getElementById("workspaceBoards")
-workspaceBoards.addEventListener("click", function(e) {
-    if(e.target.classList.contains("edit-button")){
-        let boardId = e.target.id;
-        let boardDetail = currentUser.boards.find(board => board.id == boardId);
-        showUpdate();
-        console.log(boardDetail);
-        
+    // Lấy dữ liệu mới từ các trường nhập liệu
     let newTitle = document.getElementsByClassName("editTitle-input")[0].value.trim();
     if (!newTitle) {
         alert("Vui lòng nhập đầy đủ thông tin để sửa!");
         return;
     }
+
     // Cập nhật thông tin Board
-    boardDetail.title = newTitle;
-    console.log(boardDetail.title);
+    console.log(users);
+    let indexUser = users.findIndex((e) => e.id == currentUser.id);
+    let boardId = localStorage.getItem("currentBoardId");
+    let indexBoard = users[indexUser].boards.findIndex((e) => e.id == boardId);
+    console.log(indexBoard);
+   
+    users[indexUser].boards[indexBoard].title = newTitle;
+
+
     // Lưu lại vào Local Storage
+    localStorage.setItem("users", JSON.stringify(users));
+
+    displayWorkspaceBoards(users);
+    displayStarredBoards(users);
+
+    alert("Sửa Board thành công!");
+    hide();
+}
+//Hàm xóa Board
+function deleteBoard(users) {
+    let boardId = localStorage.getItem("currentBoardId");
+    let indexUser = users.findIndex((e) => e.id == currentUser.id);
+    let indexBoard = users[indexUser].boards.findIndex((e) => e.id == boardId);
+
+   
+    users[indexUser].boards.splice(indexBoard, 1);
     localStorage.setItem("users", JSON.stringify(users));
     displayWorkspaceBoards(users);
     displayStarredBoards(users);
-    alert("Sửa Board thành công!");
-    }
-    if(e.target.classList.contains("delete-button")){
-        let boardId = e.target.id;
-        let boardDetail = currentUser.boards.find(board => board.id == boardId);
-        showDelete();
-        console.log(boardDetail);
-    }
-    
-})
-// JS trang Create board
 
+    alert("Xóa Board thành công!");
+    hide();
+    
+}
+// JS trang Create board
+function showBoardLayout(id){
+    localStorage.setItem("currentBoardId", id);
+    window.location.href = "http://127.0.0.1:5500/pages/boardLayout.html";
+}
 function showCreate(){
     document.getElementsByClassName("createBoard")[0].style.display = "flex";
     document.getElementsByClassName("container")[0].style.opacity = "0.2";
 }
-function showUpdate() {
+function showUpdate(id) {
+    localStorage.setItem("currentBoardId", id);
+    // Lấy thông tin board từ users dựa trên ID
+    let indexUser = users.findIndex((e) => e.id == currentUser.id);
+    let board = users[indexUser].boards.find((e) => e.id == id);
+
+    if (board) {
+        // Gán giá trị title của board vào input box
+        document.getElementById("editTitle-input").value = board.title;
+    }
     document.getElementsByClassName("updateBoard")[0].style.display = "flex";
     document.getElementsByClassName("container")[0].style.opacity = "0.2";
 }
-function showDelete(){
+function showDelete(id){
+    localStorage.setItem("currentBoardId", id);
+    console.log(id);
     document.getElementsByClassName("container")[0].style.opacity = "0.2";
     document.getElementsByClassName("deleteBoard")[0].style.display = "block";
 }
@@ -200,7 +206,4 @@ function hide(){
     document.getElementsByClassName("container")[0].style.opacity = "1";
     document.getElementsByClassName("updateBoard")[0].style.display = "none";
     document.getElementsByClassName("deleteBoard")[0].style.display = "none";
-}
-function save() {
-    
 }
